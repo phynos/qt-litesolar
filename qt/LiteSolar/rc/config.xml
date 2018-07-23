@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+	<layout>
+		<Node label="基本信息"></Node>
+		<Node label="密码信息" count="100"></Node>
+		<Node label="内置应用" collapse="0">
+			<Node label="短信" count="1000"></Node>
+			<Node label="通讯录" count="256"></Node>
+			<Node label="通话记录" count="20"></Node>
+		</Node>
+		<Node label="社交应用" collapse="0">
+			<Node label="QQ" count="231"></Node>
+			<Node label="微信"></Node>
+		</Node>
+		<Node label="浏览器" collapse="0">
+			<Node label="系统浏览器" count="99"></Node>
+			<Node label="UC浏览器" count="66"></Node>
+			<Node label="QQ浏览器" count="2"></Node>
+			<Node label="百度浏览器" count="123"></Node>
+			<Node label="猎豹浏览器" ></Node>
+		</Node>
+		<Node label="模拟仿真">
+		</Node>
+		<Node label="镜像分析">
+		</Node>
+	</layout>
+</root>
