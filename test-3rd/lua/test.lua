@@ -1,6 +1,6 @@
 
 -- 引入lua模块
-require("mylua")
+test_base = require("test_base")
 -- 引入C模块
 MyMath = require("MyMath")
 
@@ -16,7 +16,7 @@ mydata = {id = 1, name = "lupc"}
 function MyExInit()
 	print "do lua init"
 	
-	mylua:test()
+	test_base:test()
 
 	kk = MyMath.average(10,90)
 	print("kk ", kk)  
