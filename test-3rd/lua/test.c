@@ -3,9 +3,9 @@
 
 #include <windows.h>
  
-#include "../../3rd/lua-5.3.4/src/lua.h"
-#include "../../3rd/lua-5.3.4/src/lauxlib.h"
-#include "../../3rd/lua-5.3.4/src/lualib.h"
+#include <lua.h>
+#include <lauxlib.h>
+#include <lualib.h>
 
 
 int average(lua_State *L);
