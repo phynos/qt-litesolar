@@ -2,7 +2,7 @@
 
 .PHONY: test
 test:
-	gcc -std=c99 -Wall -Wextra -o $@ -I../../src/ -I. ../../src/duktape.c duk_module_node.c test.c -lm
+	gcc -std=c99 -Wall -Wextra -o $@ -I../../ -I. ../../duktape.c duk_module_node.c test.c -lm
 	@printf '\n'
 	./test 'assert(typeof require("pig") === "string", "basic require()");'
 	./test 'assert(require("cow").indexOf("pig") !== -1, "nested require()");'
