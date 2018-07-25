@@ -24,5 +24,5 @@ end
 
 --主循环函数(接口函数)
 function MyExLoop()
-	print "do lua loop"
+	print "lua loop print"
 end

@@ -2,6 +2,8 @@
 	自定义模块
 --]]
 
+local Person = require("test_person")
+
 mylua = {}
 
 mylua.data = {"Jack-Ma","Pony-Ma","Robin"}
@@ -12,7 +14,6 @@ local function f3()
 end
 
 -- 基本语法测试
-
 local function basetest()
 
 end
@@ -34,42 +35,24 @@ local function stringtest()
 
 end
 
-function mylua.f1(self,a)
-	self.x = a
-end
-
-function mylua:f2(a)
-	self.x = a
-end
-
--- 创建新对象
-function mylua:new()
-	local new_mylua = {}
-	self.__index = self -- 模拟继承关系
-	setmetatable(new_mylua,self) -- 绑定元表
-	return new_mylua
-end
 
 function mylua:test()
 	print "loop test:"
 	looptest()
 
 	print "        "
-	print "yu fa tang test:"
-	self.f1(self,10)
-	print(self.x)
-	self:f2(20)
-	print(self.x)
-
-	print "        "
 	print "create new object test:"
-	local obj1 = self:new()
-	obj1:f2(100)
-	print(obj1.x)
+	local p1 = Person:new()
+	p1:setName("tink")
+	p1.setAge(p1,111)
+	local p2 = Person:new()
+	p2:setName("icefrog")
+	p2.setAge(p2,222)
 
-	local obj2 = self:new()
-	obj2:f2(200)
-	print(obj2.x)
+	print(p1.name)
+	print(p2.name)
+	print(p1.age)
+	print(p2.age)
 
 	print "        "
 end

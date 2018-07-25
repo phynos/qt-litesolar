@@ -19,41 +19,52 @@ const luaL_Reg myLib[]= {
 
 int main()
 {
+    //初始化
     lua_State *L = luaL_newstate();
-    luaopen_base(L); //
-    luaopen_table(L); //
-    luaopen_package(L); //
-    luaopen_io(L); //
-    luaopen_string(L); //
- 
-    luaL_openlibs(L); //打开以上所有的lib    
-    //
+    //打开lua库
+    luaopen_base(L); 
+    luaopen_table(L); 
+    luaopen_package(L); 
+    luaopen_io(L); 
+    luaopen_string(L); 
+    //打开标准库 
+    luaL_openlibs(L);
+    //载入 本地函数
     lua_register(L, "average", average);  
-    //载入模块
-    luaL_requiref(L,"MyMath",regFuncLib,0);     
-
+    //载入 本地模块
+    luaL_requiref(L,"MyMath",regFuncLib,0);
+    
     //2.加载Lua文件  
-    int err = luaL_loadfile(L,"test.lua"); 
+    int err = luaL_loadfile(L,"main.lua"); 
     if(err) {
         printf("load file error:%d \r\n",err);
         system("pause");
         return 0;
     }
-    //3.运行Lua文件 
+    //载入完毕
+    printf("lua load finished... \r\n");
+    Sleep(1500);
+    
+    //运行Lua文件 
     err = lua_pcall(L,0,0,0);
     if(err) {
         printf("call file error:%d \r\n",err);
         system("pause");
         return 0;
     }
-    
-    //调用 业务初始化函数
+    printf("lua file run finished... \r\n");
+    Sleep(1500);
+
+    //调用 LUA全局函数
     lua_getglobal(L, "MyExInit");  
     lua_pcall(L, 0, 0, 0);
+
+    Sleep(1500);
+
     //大循环
     while(1){        
-        printf("do loop\r\n");
-        //每隔30毫秒，调用一次
+        printf("native loop print... \r\n");
+        //每隔 XX 毫秒，调用一次
         lua_getglobal(L, "MyExLoop");  
         err = lua_pcall(L, 0, 0, 0);// 调用函数，调用完成以后，会将返回值压入栈中，2表示参数个数，1表示返回结果个数。
         if(err){
@@ -121,10 +132,10 @@ int mylua_call_int_func(lua_State *L,const char* name){
     return r;
 }
 
-typedef int (*aaaaa)();
+typedef int (*native_function)();
 
 //向Lua注册C函数
-void regFunc(lua_State *L,const char* name,aaaaa address)
+void regFunc(lua_State *L,const char* name,native_function address)
 {
     lua_register(L,name,address);
 }
