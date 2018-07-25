@@ -1,11 +1,9 @@
 
 
 function TK(){
-
+	print("tk--------");
 }
 
-TK.prototype.test = function(){
-	console.log("tk.test()");
-}
-
-module.exports = TK;
+module.exports = {
+	test: TK
+};

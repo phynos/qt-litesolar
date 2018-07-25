@@ -1,4 +1,10 @@
-var TK = require("test_module.js");
 
-var tk = new TK();
-tk.test();
+var tm = require("test_module");
+
+function Test(){
+	print("test-base");
+
+	tm.test(); 
+}
+
+module.exports = Test;

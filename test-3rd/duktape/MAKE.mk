@@ -9,6 +9,7 @@
 #
 
 DUKTAPE_SOURCES = ../../3rd/duktape/duktape.c
+DUKTAPE_MODULE_SOURCES = ../../3rd/duktape/extras/module-node/duk_module_node.c
 
 # Compiler options are quite flexible.  GCC versions have a significant impact
 # on the size of -Os code, e.g. gcc-4.6 is much worse than gcc-4.5.
@@ -31,5 +32,10 @@ DEFINES =
 hello:	duktape.so hello.c
 	$(CC) -o $@ $(DEFINES) $(CCOPTS) duktape.so hello.c $(CCLIBS)
 
+# 生成动态库
 shared: $(DUKTAPE_SOURCES)
 	$(CC) -shared -fPIC $(CCOPTS) -o duktape.so $(DUKTAPE_SOURCES)  $(CCLIBS)
+
+# 生成支持node形式模块的 动态库
+shared-module: $(DUKTAPE_SOURCES) $(DUKTAPE_MODULE_SOURCES)
+	$(CC) -shared -fPIC $(CCOPTS) -o duktape.so $(DUKTAPE_SOURCES) $(DUKTAPE_MODULE_SOURCES)  $(CCLIBS)	
