@@ -1,9 +1,9 @@
 
 
-function TK(){
+function test(){
 	print("tk--------");
 }
 
 module.exports = {
-	test: TK
+	test: test
 };

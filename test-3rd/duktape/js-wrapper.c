@@ -10,8 +10,7 @@
 static void push_file_as_string(duk_context *ctx, const char *filename) {
     FILE *f;
     size_t len;
-    char buf[16384];
-
+    char buf[16384];	
     f = fopen(filename, "rb");
     if (f) {
         len = fread((void *) buf, 1, sizeof(buf), f);
@@ -51,6 +50,10 @@ static duk_ret_t cb_load_module(duk_context *ctx) {
 	module_id = duk_require_string(ctx, 0);
 	duk_get_prop_string(ctx, 2, "filename");
 	filename = duk_require_string(ctx, -1);
+	//这里稍微对文件名做一下处理（js文件必须都放在js目录下）
+	char str[80] = "js/";
+	strcat (str,filename);
+	printf("filename: %s\n",str);
 
 	printf("load_cb: id:'%s', filename:'%s'\n", module_id, filename);
 
@@ -68,7 +71,7 @@ static duk_ret_t cb_load_module(duk_context *ctx) {
 	} else if (strcmp(module_id, "shebang.js") == 0) {
 		duk_push_string(ctx, "#!ignored\nexports.foo = 123; exports.bar = 234;");
 	} else {
-		push_file_as_string(ctx,filename);
+		push_file_as_string(ctx,str);
 		//(void) duk_type_error(ctx, "cannot find module: %s", module_id);
 	}
 
@@ -113,7 +116,7 @@ int main(int argc, char *argv[]) {
 	duk_eval_string(ctx, "print('2+3=' + adder(2, 3));");
 	duk_pop(ctx);  /* pop eval result */
 
-    push_file_as_string(ctx, "index.js");
+    push_file_as_string(ctx, "js/index.js");
     if (duk_peval(ctx) != 0) {
         printf("Error running: %s\n", duk_safe_to_string(ctx, -1));
         goto finished;

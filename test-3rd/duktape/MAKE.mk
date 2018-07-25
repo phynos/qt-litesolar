@@ -29,8 +29,8 @@ DEFINES =
 
 # For debugging, use -O0 -g -ggdb, and don't add -fomit-frame-pointer
 
-hello:	duktape.so hello.c
-	$(CC) -o $@ $(DEFINES) $(CCOPTS) duktape.so hello.c $(CCLIBS)
+js-wrapper:	duktape.so js-wrapper.c
+	$(CC) -o $@ $(DEFINES) $(CCOPTS) duktape.so js-wrapper.c $(CCLIBS)
 
 # 生成动态库
 shared: $(DUKTAPE_SOURCES)

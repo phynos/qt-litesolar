@@ -1,10 +1,10 @@
 
-var tm = require("test_module");
+var JsUtil = require("JsUtil");
 
 function Test(){
 	print("test-base");
 
-	tm.test(); 
+	JsUtil.test(); 
 }
 
 module.exports = Test;
