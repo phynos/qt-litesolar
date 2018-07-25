@@ -41,7 +41,7 @@ function mylua:test()
 	looptest()
 
 	print "        "
-	print "create new object test:"
+	print "新对象创建测试:"
 	local p1 = Person:new()
 	p1:setName("tink")
 	p1.setAge(p1,111)

@@ -42,7 +42,7 @@ int main()
         return 0;
     }
     //载入完毕
-    printf("lua load finished... \r\n");
+    printf("载入lua文件 ... \r\n");
     Sleep(1500);
     
     //运行Lua文件 

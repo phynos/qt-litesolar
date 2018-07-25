@@ -28,5 +28,8 @@ DEFINES =
 
 # For debugging, use -O0 -g -ggdb, and don't add -fomit-frame-pointer
 
-hello:	$(DUKTAPE_SOURCES) hello.c
-	$(CC) -o $@ $(DEFINES) $(CCOPTS) $(DUKTAPE_SOURCES) hello.c $(CCLIBS)
+hello:	duktape.so hello.c
+	$(CC) -o $@ $(DEFINES) $(CCOPTS) duktape.so hello.c $(CCLIBS)
+
+shared: $(DUKTAPE_SOURCES)
+	$(CC) -shared -fPIC $(CCOPTS) -o duktape.so $(DUKTAPE_SOURCES)  $(CCLIBS)
