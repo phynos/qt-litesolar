@@ -1,4 +1,9 @@
 
+--搜索lua模块
+package.path = 'scripts/?.lua;'   
+--搜索so模块 
+-- package.cpath = '/usr/local/lib/lua/5.1/?.so;'        
+
 -- 引入lua模块
 test_base = require("test_base")
 -- 引入C模块
