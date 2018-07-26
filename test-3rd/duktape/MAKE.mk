@@ -16,7 +16,7 @@ DUKTAPE_CONSOLE_SOURCES = ../../3rd/duktape/extras/console/duk_console.c
 # on the size of -Os code, e.g. gcc-4.6 is much worse than gcc-4.5.
 
 CC	= gcc
-CCOPTS	= -Os -pedantic -std=c99 -Wall -fstrict-aliasing -fomit-frame-pointer
+CCOPTS	= -Os -pedantic -std=c99 -Wall -fstrict-aliasing -fomit-frame-pointer -static
 CCOPTS += -I../../3rd/duktape  # for combined sources
 CCLIBS	= -lm
 DEFINES =
