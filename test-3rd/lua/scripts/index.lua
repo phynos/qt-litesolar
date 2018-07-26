@@ -13,6 +13,9 @@ avg = average(8,6)
 
 print("The average is ", avg)  
 
+-- 中文测试
+print "中文测试:"
+
 mydata = {id = 1, name = "lupc"}
 
 

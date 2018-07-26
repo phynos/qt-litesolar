@@ -30,17 +30,20 @@ DEFINES =
 
 # For debugging, use -O0 -g -ggdb, and don't add -fomit-frame-pointer
 
+# -fexec-charset=GBK
+# -finput-charset=utf8
+
 js: duk-module-node duk-console js.c
-	$(CC) -o $@ $(DEFINES) $(CCOPTS) duktape.so duk-module-node.so duk-console.so js.c $(CCLIBS)
+	$(CC) -fexec-charset=GBK -o $@ $(DEFINES) $(CCOPTS) duktape.so duk-module-node.so duk-console.so js.c $(CCLIBS)
 
 # 生成支持node形式模块的 动态库
 duk-module-node:  duktape $(DUKTAPE_MODULE_SOURCES)
-	$(CC) -shared -fPIC $(CCOPTS) -o duk-module-node.so duktape.so $(DUKTAPE_MODULE_SOURCES)  $(CCLIBS)	
+	$(CC) -fexec-charset=GBK -shared -fPIC $(CCOPTS) -o duk-module-node.so duktape.so $(DUKTAPE_MODULE_SOURCES)  $(CCLIBS)	
 
 # 生成支持node形式模块的 动态库
 duk-console:  duktape $(DUKTAPE_CONSOLE_SOURCES)
-	$(CC) -shared -fPIC $(CCOPTS) -o duk-console.so duktape.so $(DUKTAPE_CONSOLE_SOURCES)  $(CCLIBS)	
+	$(CC) -fexec-charset=GBK -shared -fPIC $(CCOPTS) -o duk-console.so duktape.so $(DUKTAPE_CONSOLE_SOURCES)  $(CCLIBS)	
 
 # 生成动态库
 duktape: $(DUKTAPE_SOURCES)
-	$(CC) -shared -fPIC $(CCOPTS) -o duktape.so $(DUKTAPE_SOURCES)  $(CCLIBS)
+	$(CC) -fexec-charset=GBK -shared -fPIC $(CCOPTS) -o duktape.so $(DUKTAPE_SOURCES)  $(CCLIBS)

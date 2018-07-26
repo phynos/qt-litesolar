@@ -1,3 +1,3 @@
 echo off
-mingw32-make -f MAKE.mk
+mingw32-make -f MAKE
 pause

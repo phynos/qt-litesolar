@@ -36,6 +36,9 @@ OUTPUT = ../bin
 #js: duk-module-node duk-console js.c
 #	$(CC) -o $@ $(DEFINES) $(CCOPTS) $(OUTPUT)/duktape.so duk-module-node.so duk-console.so js.c $(CCLIBS)
 
+3rd-all: duk-all
+	@echo 生成所有第三方的so库
+
 duk-all : duktape duk-module-node duk-console
 	@echo 编译所有的duk模块
 
