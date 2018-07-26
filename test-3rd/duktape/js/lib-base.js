@@ -1,5 +1,5 @@
 
-var JsUtil = require("JsUtil");
+var JsUtil = require("lib-util");
 
 function Test(){
 	print("test-base");

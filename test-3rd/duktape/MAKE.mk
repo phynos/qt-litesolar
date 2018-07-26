@@ -29,13 +29,13 @@ DEFINES =
 
 # For debugging, use -O0 -g -ggdb, and don't add -fomit-frame-pointer
 
-js-wrapper:	duktape.so js-wrapper.c
-	$(CC) -o $@ $(DEFINES) $(CCOPTS) duktape.so js-wrapper.c $(CCLIBS)
+js: duktape.so duk-module-node.so js.c
+	$(CC) -o $@ $(DEFINES) $(CCOPTS) duktape.so duk-module-node.so js.c $(CCLIBS)
+
+# 生成支持node形式模块的 动态库
+shared-module:  duktape.so $(DUKTAPE_MODULE_SOURCES)
+	$(CC) -shared -fPIC $(CCOPTS) -o duk-module-node.so duktape.so $(DUKTAPE_MODULE_SOURCES)  $(CCLIBS)	
 
 # 生成动态库
 shared: $(DUKTAPE_SOURCES)
 	$(CC) -shared -fPIC $(CCOPTS) -o duktape.so $(DUKTAPE_SOURCES)  $(CCLIBS)
-
-# 生成支持node形式模块的 动态库
-shared-module: $(DUKTAPE_SOURCES) $(DUKTAPE_MODULE_SOURCES)
-	$(CC) -shared -fPIC $(CCOPTS) -o duktape.so $(DUKTAPE_SOURCES) $(DUKTAPE_MODULE_SOURCES)  $(CCLIBS)	

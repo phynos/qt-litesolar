@@ -1,4 +1,4 @@
-var Test = require("test");
+var Test = require("lib-base");
 
 var test = new Test();
 
