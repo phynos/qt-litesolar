@@ -1,1 +1,1 @@
-del *.o *.exe *.a
+del *.o *.exe *.a *.so

@@ -10,6 +10,7 @@
 
 DUKTAPE_SOURCES = ../../3rd/duktape/duktape.c
 DUKTAPE_MODULE_SOURCES = ../../3rd/duktape/extras/module-node/duk_module_node.c
+DUKTAPE_CONSOLE_SOURCES = ../../3rd/duktape/extras/console/duk_console.c
 
 # Compiler options are quite flexible.  GCC versions have a significant impact
 # on the size of -Os code, e.g. gcc-4.6 is much worse than gcc-4.5.
@@ -29,13 +30,17 @@ DEFINES =
 
 # For debugging, use -O0 -g -ggdb, and don't add -fomit-frame-pointer
 
-js: duktape.so duk-module-node.so js.c
-	$(CC) -o $@ $(DEFINES) $(CCOPTS) duktape.so duk-module-node.so js.c $(CCLIBS)
+js: duk-module-node duk-console js.c
+	$(CC) -o $@ $(DEFINES) $(CCOPTS) duktape.so duk-module-node.so duk-console.so js.c $(CCLIBS)
 
 # 生成支持node形式模块的 动态库
-shared-module:  duktape.so $(DUKTAPE_MODULE_SOURCES)
+duk-module-node:  duktape $(DUKTAPE_MODULE_SOURCES)
 	$(CC) -shared -fPIC $(CCOPTS) -o duk-module-node.so duktape.so $(DUKTAPE_MODULE_SOURCES)  $(CCLIBS)	
 
+# 生成支持node形式模块的 动态库
+duk-console:  duktape $(DUKTAPE_CONSOLE_SOURCES)
+	$(CC) -shared -fPIC $(CCOPTS) -o duk-console.so duktape.so $(DUKTAPE_CONSOLE_SOURCES)  $(CCLIBS)	
+
 # 生成动态库
-shared: $(DUKTAPE_SOURCES)
+duktape: $(DUKTAPE_SOURCES)
 	$(CC) -shared -fPIC $(CCOPTS) -o duktape.so $(DUKTAPE_SOURCES)  $(CCLIBS)

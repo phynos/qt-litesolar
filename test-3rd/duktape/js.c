@@ -5,6 +5,7 @@
 #include "duktape.h"
 
 #include "../../3rd/duktape/extras/module-node/duk_module_node.h"
+#include "../../3rd/duktape/extras/console/duk_console.h"
 
 /* For brevity assumes a maximum file length of 16kB. */
 static void push_file_as_string(duk_context *ctx, const char *filename) {
@@ -99,12 +100,15 @@ int main(int argc, char *argv[]) {
 
 	(void) argc; (void) argv;  /* suppress warning */
 
+	//加载 node模块
 	duk_push_object(ctx);
 	duk_push_c_function(ctx, cb_resolve_module, DUK_VARARGS);
 	duk_put_prop_string(ctx, -2, "resolve");
 	duk_push_c_function(ctx, cb_load_module, DUK_VARARGS);
 	duk_put_prop_string(ctx, -2, "load");
 	duk_module_node_init(ctx);
+	//加载console模块
+	duk_console_init(ctx, DUK_CONSOLE_PROXY_WRAPPER /*flags*/);
 
 	duk_push_c_function(ctx, native_print, DUK_VARARGS);
 	duk_put_global_string(ctx, "print");
