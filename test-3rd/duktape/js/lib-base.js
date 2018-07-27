@@ -1,6 +1,5 @@
 
 
-
 function Test(){
 	print("test-base");
 }

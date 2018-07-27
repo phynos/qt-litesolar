@@ -7,6 +7,16 @@
 #include "../../3rd/duktape/extras/module-node/duk_module_node.h"
 #include "../../3rd/duktape/extras/console/duk_console.h"
 
+char js_path[100] = "js";
+
+static char * get_js_final_filename(const char *filename){
+	memset(js_path, 0, 100);
+	strcpy(js_path,"js/");
+	strcat(js_path,filename);
+	printf("filename:%s\n", js_path);
+	return js_path;
+}
+
 /* For brevity assumes a maximum file length of 16kB. */
 static void push_file_as_string(duk_context *ctx, const char *filename) {
     FILE *f;
@@ -52,9 +62,9 @@ static duk_ret_t cb_load_module(duk_context *ctx) {
 	duk_get_prop_string(ctx, 2, "filename");
 	filename = duk_require_string(ctx, -1);
 	//这里稍微对文件名做一下处理（js文件必须都放在js目录下）
-	char str[80] = "js/";
-	strcat (str,filename);
-	printf("filename: %s\n",str);
+	// char str[80] = "js/";
+	// strcat (str,filename);
+	// printf("filename: %s\n",str);
 
 	printf("load_cb: id:'%s', filename:'%s'\n", module_id, filename);
 
@@ -72,7 +82,7 @@ static duk_ret_t cb_load_module(duk_context *ctx) {
 	} else if (strcmp(module_id, "shebang.js") == 0) {
 		duk_push_string(ctx, "#!ignored\nexports.foo = 123; exports.bar = 234;");
 	} else {
-		push_file_as_string(ctx,str);
+		push_file_as_string(ctx,get_js_final_filename(filename));
 		//(void) duk_type_error(ctx, "cannot find module: %s", module_id);
 	}
 
