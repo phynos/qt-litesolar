@@ -13,6 +13,10 @@ print("中文字符1111");
 console.log("-----------------------");
 console.log("我是源码中的中文字符22222");
 
+console.log(typeof(Test));
+
+console.log(Test);
+
 //
 var t1 = new Test();
 t1.setName("JackMa");
