@@ -7,6 +7,9 @@
 #include "../../3rd/duktape/extras/module-node/duk_module_node.h"
 #include "../../3rd/duktape/extras/console/duk_console.h"
 
+#include <windows.h>
+
+
 /* For brevity assumes a maximum file length of 16kB. */
 static void push_file_as_string(duk_context *ctx, const char *filename) {
     FILE *f;
@@ -23,10 +26,25 @@ static void push_file_as_string(duk_context *ctx, const char *filename) {
 }
 
 static duk_ret_t native_print(duk_context *ctx) {
+	int len = 0;
 	duk_push_string(ctx, " ");
 	duk_insert(ctx, 0);
 	duk_join(ctx, duk_get_top(ctx) - 1);
-	printf("%s\n", duk_safe_to_string(ctx, -1));
+	const char * str = duk_safe_to_string(ctx, -1);
+	len = strlen(str);
+
+	//utf8 to unicode
+	int n = MultiByteToWideChar(CP_UTF8, 0, str, -1, NULL, 0);
+	wchar_t uni[n];
+	MultiByteToWideChar(CP_UTF8, 0, str, -1, uni, n); 
+	//unicode to gbk
+	int len3 = WideCharToMultiByte(CP_ACP, 0, uni, -1, NULL, 0, NULL, NULL);
+	char gbk[len3];
+	WideCharToMultiByte(CP_ACP, 0, uni, -1, gbk, len, NULL, NULL); 
+	//
+	printf("%s\n",gbk);
+
+	//printf("长度：%d，%s\n", len,str);
 	return 0;
 }
 

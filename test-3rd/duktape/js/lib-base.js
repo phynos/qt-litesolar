@@ -1,8 +1,10 @@
 
-
+var JsUtil = require("util/lib-util");
 
 function Test(){
 	print("test-base");
+
+	JsUtil.test("test-base");
 }
 
 Test.prototype.setName = function(name){

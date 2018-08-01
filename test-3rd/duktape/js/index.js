@@ -1,14 +1,17 @@
 
 
-var Test = require("lib-base");
-var JsUtil = require("lib-util");
+var Test = require("./lib-base");
+var JsUtil = require("util/lib-util");
 
 
 // 
 print("js ----------------");
 
 //中文注释
-console.log("我是源码中的中文字符");
+print("中文字符1111");
+
+console.log("-----------------------");
+console.log("我是源码中的中文字符22222");
 
 //
 var t1 = new Test();
@@ -24,4 +27,4 @@ console.log(typeof(t1) === typeof(t2));
 console.log(typeof(t1) == typeof(t2));
 
 
-JsUtil.test(); 
+JsUtil.test("index"); 
