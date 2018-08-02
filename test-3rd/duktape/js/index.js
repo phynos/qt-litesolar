@@ -1,34 +1,18 @@
 
 
-var Test = require("./lib-base");
 var JsUtil = require("util/lib-util");
+var TestCase = require("./lib-test");
 
+console.log(Date());
 
-// 
-print("js ----------------");
+TestCase.testChar();
 
-//中文注释
-print("中文字符1111");
+TestCase.testCharLength();
 
-console.log("-----------------------");
-console.log("我是源码中的中文字符22222");
+TestCase.testObject();
 
-console.log(typeof(Test));
+TestCase.testMulModule();
 
-console.log(Test);
-
-//
-var t1 = new Test();
-t1.setName("JackMa");
-t1.toString();
-var t2 = new Test();
-t2.setName("Pony");
-t2.toString();
-t2.stringTest();
-
-//
-console.log(typeof(t1) === typeof(t2));
-console.log(typeof(t1) == typeof(t2));
-
+TestCase.testRPN();
 
 JsUtil.test("index"); 

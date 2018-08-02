@@ -1,7 +1,6 @@
 
 function test(p){
-	print("from:" + p);
-	console.log("console log");
+	console.log("from:" + p);
 }
 
 module.exports = {
