@@ -33,8 +33,8 @@ DEFINES =
 # -fexec-charset=GBK
 # -finput-charset=utf8
 
-js: duk-module-node duk-console js.c
-	$(CC) -fexec-charset=GBK -o $@ $(DEFINES) $(CCOPTS) duktape.so duk-module-node.so duk-console.so js.c $(CCLIBS)
+js-core: duk-module-node duk-console js-core.c
+	$(CC) -fexec-charset=GBK -o $@ $(DEFINES) $(CCOPTS) duktape.so duk-module-node.so duk-console.so js-core.c $(CCLIBS)
 
 # 生成支持node形式模块的 动态库
 duk-module-node:  duktape $(DUKTAPE_MODULE_SOURCES)

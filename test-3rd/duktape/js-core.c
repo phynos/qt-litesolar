@@ -9,16 +9,6 @@
 
 #include <windows.h>
 
-char js_path[100] = "js";
-
-static char * get_js_final_filename(const char *filename){
-	memset(js_path, 0, 100);
-	strcpy(js_path,"js/");
-	strcat(js_path,filename);
-	printf("filename:%s\n", js_path);
-	return js_path;
-}
-
 /* For brevity assumes a maximum file length of 16kB. */
 static void push_file_as_string(duk_context *ctx, const char *filename) {
     FILE *f;
@@ -39,9 +29,9 @@ static duk_ret_t native_print(duk_context *ctx) {
 	duk_push_string(ctx, " ");
 	duk_insert(ctx, 0);
 	duk_join(ctx, duk_get_top(ctx) - 1);
+	//js 返回的字符
 	const char * str = duk_safe_to_string(ctx, -1);
 	len = strlen(str);
-
 	//utf8 to unicode
 	int n = MultiByteToWideChar(CP_UTF8, 0, str, -1, NULL, 0);
 	wchar_t uni[n];
@@ -52,7 +42,6 @@ static duk_ret_t native_print(duk_context *ctx) {
 	WideCharToMultiByte(CP_ACP, 0, uni, -1, gbk, len, NULL, NULL); 
 	//
 	printf("%s\n",gbk);
-
 	//printf("长度：%d，%s\n", len,str);
 	return 0;
 }
@@ -78,12 +67,18 @@ static duk_ret_t cb_load_module(duk_context *ctx) {
 	module_id = duk_require_string(ctx, 0);
 	duk_get_prop_string(ctx, 2, "filename");
 	filename = duk_require_string(ctx, -1);
-	//这里稍微对文件名做一下处理（js文件必须都放在js目录下）
-	// char str[80] = "js/";
-	// strcat (str,filename);
-	// printf("filename: %s\n",str);
+	
+	//这里稍微对文件名做一下处理（js文件必须都放在js目录下）	
+	int len1 = strlen(filename);
+	int len2 = strlen("js/");	
+	//注意：这里str是局部数据，本函数执行完毕就会被回收
+	char js_path[len1 + len2];
+	memset(js_path, 0, len1 + len2);
+	strcpy(js_path,"js/");
+	strcat(js_path,filename);
+	//printf("filename:%s\n", js_path);
 
-	printf("load_cb: id:'%s', filename:'%s'\n", module_id, filename);
+	printf("load_cb: id:'%s', filename:'%s'\n", module_id, js_path);
 
 	if (strcmp(module_id, "pig.js") == 0) {
 		duk_push_sprintf(ctx, "module.exports = 'you\\'re about to get eaten by %s';",
@@ -99,7 +94,7 @@ static duk_ret_t cb_load_module(duk_context *ctx) {
 	} else if (strcmp(module_id, "shebang.js") == 0) {
 		duk_push_string(ctx, "#!ignored\nexports.foo = 123; exports.bar = 234;");
 	} else {
-		push_file_as_string(ctx,get_js_final_filename(filename));
+		push_file_as_string(ctx,js_path);
 		//(void) duk_type_error(ctx, "cannot find module: %s", module_id);
 	}
 
