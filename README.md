@@ -2,7 +2,7 @@
 注意：本系统是我个人工作总结，由于时间关系和精力所限，进度会很慢。
 
 ### 架构图
-[架构图](doc/architecture.png)
+![架构图](doc/architecture.png)
 
 
 ### 编译说明
