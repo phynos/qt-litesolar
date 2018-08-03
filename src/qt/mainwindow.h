@@ -18,6 +18,11 @@ public:
 
     void QTreeWidgetTest();
 
+    //移除并隐藏所有dock
+    void removeAllDock();
+    //显示dock窗口
+    void showDock(const QList<int>& index = QList<int>());
+
 private slots:
     void on_actionExit_triggered();
 
@@ -27,6 +32,8 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
+
+    QList<QDockWidget*> m_docks;///< 记录所有dockWidget的指针
 
     void setupView();
     void setupStateBar();

@@ -32,6 +32,19 @@ MainWindow::MainWindow(QWidget *parent) :
     QTreeWidgetTest();
     //QMessageBox::information(this,tr("asdfadsf"),tr("adsfasdf"),QMessageBox::Yes | QMessageBox::No, QMessageBox::Yes);
 
+    //删除中央窗体
+    QWidget* p = takeCentralWidget();
+        if(p)
+            delete p;
+    //允许嵌套dock
+    //setDockNestingEnabled(true);
+    //记录所有的dock指针
+    m_docks.append(ui->dockWidget_2);
+    m_docks.append(ui->dockWidget_3);
+    m_docks.append(ui->dockWidget_4);
+
+    splitDockWidget(ui->dockWidget,ui->dockWidget_2,Qt::Horizontal);
+
     NotifyManager *manager = new NotifyManager(this);
     manager->notify("新消息", "新消息新消息新消息新消息", "://img/message.png", "http://www.github.com");
 }
@@ -68,6 +81,31 @@ void MainWindow::QTreeWidgetTest()
     rootItem_2->addChild(childItem_2_1);
     rootItem_2->addChild(childItem_2_2);
     rootItem_2->addChild(childItem_2_3);
+}
+
+void MainWindow::removeAllDock()
+{
+    for(int i=0;i < m_docks.size();++i)
+    {
+        removeDockWidget(m_docks[i]);
+    }
+}
+
+void MainWindow::showDock(const QList<int> &index)
+{
+    if (index.isEmpty())
+     {
+         for(int i=0;i<m_docks.size();++i)
+         {
+             m_docks[i]->show();
+         }
+     }
+     else
+     {
+         foreach (int i, index) {
+             m_docks[i]->show();
+         }
+     }
 }
 
 void MainWindow::setupView()

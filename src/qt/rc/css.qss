@@ -6,7 +6,7 @@ QMenuBar {
         border: none;
 }
 QMenuBar::item {
-        padding: 2px 5px 2px 5px;
+        padding: 2px 10px 2px 10px;
         background: transparent;
 }
 QMenuBar::item:enabled {
@@ -71,3 +71,17 @@ QStatusBar::item {
         border: none;
         border-right: 1px solid rgb(100, 100, 100);
 }
+
+/**********DOCK栏**********/
+QDockWidget{
+    border:1px solid grey;
+    margin: 1px 1px 1px 1px;
+}
+
+
+
+
+
+
+
+
