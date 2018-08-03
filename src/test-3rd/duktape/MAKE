@@ -8,6 +8,8 @@
 #  Makefile uses the combined source file.
 #
 
+OUTPUT=../../bin
+
 DUKTAPE_SOURCES = ../../3rd/duktape/duktape.c
 DUKTAPE_MODULE_SOURCES = ../../3rd/duktape/extras/module-node/duk_module_node.c
 DUKTAPE_CONSOLE_SOURCES = ../../3rd/duktape/extras/console/duk_console.c
@@ -33,17 +35,7 @@ DEFINES =
 # -fexec-charset=GBK
 # -finput-charset=utf8
 
-js-core: duk-module-node duk-console js-core.c
-	$(CC) -fexec-charset=GBK -o $@ $(DEFINES) $(CCOPTS) duktape.so duk-module-node.so duk-console.so js-core.c $(CCLIBS)
+SO_LIB = $(OUTPUT)/duktape.so $(OUTPUT)/duk-module-node.so $(OUTPUT)/duk-console.so
 
-# 生成支持node形式模块的 动态库
-duk-module-node:  duktape $(DUKTAPE_MODULE_SOURCES)
-	$(CC) -fexec-charset=GBK -shared -fPIC $(CCOPTS) -o duk-module-node.so duktape.so $(DUKTAPE_MODULE_SOURCES)  $(CCLIBS)	
-
-# 生成支持node形式模块的 动态库
-duk-console:  duktape $(DUKTAPE_CONSOLE_SOURCES)
-	$(CC) -fexec-charset=GBK -shared -fPIC $(CCOPTS) -o duk-console.so duktape.so $(DUKTAPE_CONSOLE_SOURCES)  $(CCLIBS)	
-
-# 生成动态库
-duktape: $(DUKTAPE_SOURCES)
-	$(CC) -fexec-charset=GBK -shared -fPIC $(CCOPTS) -o duktape.so $(DUKTAPE_SOURCES)  $(CCLIBS)
+test_js: js_test.c
+	$(CC) -fexec-charset=GBK -o $(OUTPUT)/$@ $(DEFINES) $(CCOPTS) $(SO_LIB) js_test.c $(CCLIBS)

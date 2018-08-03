@@ -35,7 +35,7 @@ int main()
     luaL_requiref(L,"MyMath",regFuncLib,0);
     
     //2.加载Lua文件  
-    int err = luaL_loadfile(L,"scripts/index.lua"); 
+    int err = luaL_loadfile(L,"lua/index.lua"); 
     if(err) {
         printf("load file error:%d \r\n",err);
         system("pause");

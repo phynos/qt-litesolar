@@ -1,13 +1,15 @@
-#
-#  Example Makefile for building a program with embedded Duktape.
-#
-#  There are two source sets in the distribution: (1) combined sources where
-#  you only need duktape.c, duktape.h, and duk_config.h, and (2) separate
-#  sources where you have a bunch of source and header files.  Whichever
-#  you use, simply include the relevant sources into your C project.  This
-#  Makefile uses the combined source file.
-#
 
+
+# libmodbusæºç 
+LIBMODBUS_SOURCES = ../3rd/libmodbus/modbus.c \
+ ../3rd/libmodbus/modbus-data.c \
+ ../3rd/libmodbus/modbus-rtu.c \
+ ../3rd/libmodbus/modbus-tcp.c
+LIBMODBUS_LUA_SOURCES = ../lualib-src/libmodbus/lua-modbus.c
+
+# libmodbus luaç»‘å®šæºç 
+
+# duktapeæºç 
 DUKTAPE_SOURCES = ../3rd/duktape/duktape.c
 DUKTAPE_MODULE_SOURCES = ../3rd/duktape/extras/module-node/duk_module_node.c
 DUKTAPE_CONSOLE_SOURCES = ../3rd/duktape/extras/console/duk_console.c
@@ -17,7 +19,9 @@ DUKTAPE_CONSOLE_SOURCES = ../3rd/duktape/extras/console/duk_console.c
 
 CC	= gcc
 CCOPTS	= -Os -pedantic -std=c99 -Wall -fstrict-aliasing -fomit-frame-pointer
-CCOPTS += -I../3rd/duktape  # for combined sources
+CCOPTS += -I../3rd/duktape  # duktape
+CCOPTS += -I../3rd/libmodbus #libmodbus
+CCOPTS += -I../3rd/lua-5.3.4/src #lua
 CCLIBS	= -lm
 DEFINES =
 
@@ -27,29 +31,36 @@ OUTPUT = ../bin
 # If you want a 32-bit build on a 64-bit host
 #CCOPTS += -m32
 
-# Use the tools/configure.py utility to modify Duktape default configuration:
-# http://duktape.org/guide.html#compiling
-# http://wiki.duktape.org/Configuring.html
-
 # For debugging, use -O0 -g -ggdb, and don't add -fomit-frame-pointer
 
-#js: duk-module-node duk-console js.c
-#	$(CC) -o $@ $(DEFINES) $(CCOPTS) $(OUTPUT)/duktape.so duk-module-node.so duk-console.so js.c $(CCLIBS)
+3rd-all: duk-all libmodbus-all
+	@echo ç”Ÿæˆæ‰€æœ‰ç¬¬ä¸‰æ–¹çš„soåº“
 
-3rd-all: duk-all
-	@echo Éú³ÉËùÓĞµÚÈı·½µÄso¿â
+duk-all: duktape duk-module-node duk-console
+	@echo ç¼–è¯‘æ‰€æœ‰çš„dukæ¨¡å—
 
-duk-all : duktape duk-module-node duk-console
-	@echo ±àÒëËùÓĞµÄdukÄ£¿é
+libmodbus: 	libmodbus
+	@echo target:libmodbus.so
 
-# Éú³ÉÖ§³ÖnodeĞÎÊ½Ä£¿éµÄ ¶¯Ì¬¿â
+lua:
+	@echo not surport....	
+
+# duktape-ç”Ÿæˆæ”¯æŒnodeå½¢å¼æ¨¡å—çš„ åŠ¨æ€åº“
 duk-module-node:  duktape $(DUKTAPE_MODULE_SOURCES)
 	$(CC) -shared -fPIC $(CCOPTS) -o $(OUTPUT)/duk-module-node.so $(OUTPUT)/duktape.so $(DUKTAPE_MODULE_SOURCES)  $(CCLIBS)	
 
-# Éú³ÉÖ§³ÖnodeĞÎÊ½Ä£¿éµÄ ¶¯Ì¬¿â
+# duktape-ç”Ÿæˆæ”¯æŒnodeå½¢å¼æ¨¡å—çš„ åŠ¨æ€åº“
 duk-console:  duktape $(DUKTAPE_CONSOLE_SOURCES)
 	$(CC) -shared -fPIC $(CCOPTS) -o $(OUTPUT)/duk-console.so $(OUTPUT)/duktape.so $(DUKTAPE_CONSOLE_SOURCES)  $(CCLIBS)	
 
-# Éú³É¶¯Ì¬¿â
+# duktape-ç”ŸæˆåŠ¨æ€åº“
 duktape: $(DUKTAPE_SOURCES)
 	$(CC) -shared -fPIC $(CCOPTS) -o $(OUTPUT)/duktape.so $(DUKTAPE_SOURCES)  $(CCLIBS)
+
+# libmodbus-ç”Ÿæˆluaç»‘å®šåŠ¨æ€åº“
+libmodbus_lua: $(LIBMODBUS_LUA_SOURCES)
+	$(CC) -shared -fPIC $(CCOPTS) -o $(OUTPUT)/libmodbus-lua.so $(OUTPUT)/libmodbus.so $(OUTPUT)/lua53.dll $(LIBMODBUS_LUA_SOURCES)  $(CCLIBS)
+
+# libmodbus-ç”ŸæˆåŠ¨æ€åº“
+libmodbus: $(LIBMODBUS_SOURCES)
+	$(CC) -shared -fPIC $(CCOPTS) -o $(OUTPUT)/libmodbus.so $(LIBMODBUS_SOURCES) $(CCLIBS) -lWs2_32
