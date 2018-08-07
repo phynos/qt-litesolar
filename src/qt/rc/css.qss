@@ -54,14 +54,15 @@ QMenu::icon {
 }
 
 /**********工具栏**********/
+/*
 QToolBar {
     background: rgb( 240, 240, 240);
-    spacing: 3px; /* spacing between items in the tool bar */
+    spacing: 3px;
 }
 
 QToolBar::handle {
     image: url(handle.png);
-}
+} */
 
 /**********状态栏**********/
 QStatusBar {

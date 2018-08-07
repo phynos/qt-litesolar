@@ -32,10 +32,8 @@ MainWindow::MainWindow(QWidget *parent) :
     QTreeWidgetTest();
     //QMessageBox::information(this,tr("asdfadsf"),tr("adsfasdf"),QMessageBox::Yes | QMessageBox::No, QMessageBox::Yes);
 
-    //删除中央窗体
-    QWidget* p = takeCentralWidget();
-        if(p)
-            delete p;
+    setCentralWidget(ui->dockWidget_5);
+
     //允许嵌套dock
     //setDockNestingEnabled(true);
     //记录所有的dock指针

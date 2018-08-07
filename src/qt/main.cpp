@@ -14,7 +14,7 @@ int main(int argc, char *argv[])
         qDebug() << s;
     }
 
-    QApplication::setStyle("Fusion");
+    QApplication::setStyle("WindowsXP");
 
     QApplication a(argc, argv);
     MainWindow w;
