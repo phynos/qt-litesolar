@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<device name="环境监测仪" desc="环境检测仪" deviceTypeId="4" protocolId="4" enabled="false" vendor="武汉某厂家">
+  <function03>
+    <data address="0" unit="m/s" factor="10" parse="uint16">风速</data>
+    <data address="1" unit="mm" factor="10" parse="uint16">雨量</data>
+    <data address="2" unit="℃" factor="10" parse="int16">气温</data>
+    <data address="4" unit="hpa" factor="10" parse="uint16">数字气压</data>
+    <data address="5" unit="w/m2" factor="1" parse="uint16">辐射</data>
+    <data address="6" unit="°" factor="1" parse="uint16">风向</data>
+    <data address="8" unit="%" factor="10" parse="uint16">湿度</data>
+  </function03>
+</device>
