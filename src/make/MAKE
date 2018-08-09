@@ -1,5 +1,8 @@
 
 
+#
+SQLITE3_SOURCES = ../3rd/sqlite-3.24.0/sqlite3.c
+
 # libmodbus源码
 LIBMODBUS_SOURCES = ../3rd/libmodbus/modbus.c \
  ../3rd/libmodbus/modbus-data.c \
@@ -22,6 +25,7 @@ CCOPTS	= -Os -pedantic -std=c99 -Wall -fstrict-aliasing -fomit-frame-pointer
 CCOPTS += -I../3rd/duktape  # duktape
 CCOPTS += -I../3rd/libmodbus #libmodbus
 CCOPTS += -I../3rd/lua-5.3.4/src #lua
+CCOPTS += -I../3rd/sqlite-3.24.0 #sqlite3
 CCLIBS	= -lm
 DEFINES =
 
@@ -64,3 +68,7 @@ libmodbus_lua: $(LIBMODBUS_LUA_SOURCES)
 # libmodbus-生成动态库
 libmodbus: $(LIBMODBUS_SOURCES)
 	$(CC) -shared -fPIC $(CCOPTS) -o $(OUTPUT)/libmodbus.so $(LIBMODBUS_SOURCES) $(CCLIBS) -lWs2_32
+
+#sqlite3
+sqlite3: $(SQLITE3_SOURCES)
+	$(CC) -shared -fPIC $(CCOPTS) -o $(OUTPUT)/sqlite3.so $(SQLITE3_SOURCES) $(CCLIBS)	
