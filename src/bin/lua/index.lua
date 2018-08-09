@@ -1,13 +1,15 @@
 
 --搜索lua模块
 package.path = 'lua/?.lua;'   
---搜索so模块 
--- package.cpath = '/usr/local/lib/lua/5.1/?.so;'        
+--搜索so模块
+package.cpath = "./?.so" --so搜寻路劲     
 
 -- 引入lua模块
 test_base = require("test_base")
 -- 引入C模块
 MyMath = require("MyMath")
+
+require("test_sqlite3")
 
 avg = average(8,6)
 
