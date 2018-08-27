@@ -8,6 +8,7 @@
 #include <QWidget>
 #include <QMouseEvent>
 
+#include "menu/dialogsetting.h"
 #include "menu/dialogabout.h"
 #include "menu/dialogdevicedata.h"
 #include "notify/notifymanager.h"
@@ -147,6 +148,13 @@ void MainWindow::on_actionAbout_triggered()
 void MainWindow::on_action4_2_triggered()
 {
     DialogDeviceData dialog(this);
+    dialog.setModal(true);
+    dialog.exec();
+}
+
+void MainWindow::on_actionSetting_triggered()
+{
+    DialogSetting dialog(this);
     dialog.setModal(true);
     dialog.exec();
 }

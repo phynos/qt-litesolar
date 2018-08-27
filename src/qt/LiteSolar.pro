@@ -25,6 +25,7 @@ SOURCES += main.cpp\
     menu/dialogevents.cpp \
     notify/notify.cpp \
     notify/notifymanager.cpp \
+    menu/dialogsetting.cpp
 
 HEADERS  += mainwindow.h \
     menu/dialogabout.h \
@@ -45,7 +46,8 @@ HEADERS  += mainwindow.h \
     ui_dialogsetting.h \
     ui_dialogtv.h \
     ui_formdevice.h \
-    ui_mainwindow.h
+    ui_mainwindow.h \
+    menu/dialogsetting.h
 
 FORMS    += mainwindow.ui \
     menu/dialogabout.ui \
@@ -55,7 +57,8 @@ FORMS    += mainwindow.ui \
     menu/dialogdeviceevents.ui \
     tv/dialogtv.ui \
     device/formdevice.ui \
-    menu/dialogevents.ui
+    menu/dialogevents.ui \
+    menu/dialogsetting.ui
 
 RESOURCES += \
     solar.qrc
