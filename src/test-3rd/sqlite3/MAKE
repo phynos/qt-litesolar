@@ -28,7 +28,7 @@ DEFINES =
 # -fexec-charset=GBK
 # -finput-charset=utf8
 
-SO_LIB = $(OUTPUT)/sqlite3.so
+SO_LIB = $(OUTPUT)/sqlite3.dll
 
 test_sqlite3: test_sqlite3.c
 	$(CC) -fexec-charset=GBK -o $(OUTPUT)/$@ $(DEFINES) $(CCOPTS) $(SO_LIB) test_sqlite3.c $(CCLIBS)

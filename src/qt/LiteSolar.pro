@@ -23,8 +23,8 @@ SOURCES += main.cpp\
     tv/dialogtv.cpp \
     device/formdevice.cpp \
     menu/dialogevents.cpp \
-    notifymanager.cpp \
-    notify.cpp
+    notify/notify.cpp \
+    notify/notifymanager.cpp \
 
 HEADERS  += mainwindow.h \
     menu/dialogabout.h \
@@ -35,8 +35,17 @@ HEADERS  += mainwindow.h \
     device/formdevice.h \
     menu/dialogevents.h \
     menu/colordefines.h \
-    notifymanager.h \
-    notify.h
+    notify/notifymanager.h \
+    notify/notify.h \
+    ui_dialogabout.h \
+    ui_dialogdevicedata.h \
+    ui_dialogdeviceevents.h \
+    ui_dialogevents.h \
+    ui_dialoghistoryline.h \
+    ui_dialogsetting.h \
+    ui_dialogtv.h \
+    ui_formdevice.h \
+    ui_mainwindow.h
 
 FORMS    += mainwindow.ui \
     menu/dialogabout.ui \

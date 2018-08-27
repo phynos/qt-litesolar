@@ -35,7 +35,7 @@ DEFINES =
 # -fexec-charset=GBK
 # -finput-charset=utf8
 
-SO_LIB = $(OUTPUT)/duktape.so $(OUTPUT)/duk-module-node.so $(OUTPUT)/duk-console.so
+SO_LIB = $(OUTPUT)/duktape.dll $(OUTPUT)/duk-module-node.dll $(OUTPUT)/duk-console.dll
 
-test_js: js_test.c
+js_test: js_test.c
 	$(CC) -fexec-charset=GBK -o $(OUTPUT)/$@ $(DEFINES) $(CCOPTS) $(SO_LIB) js_test.c $(CCLIBS)
