@@ -28,6 +28,19 @@
      <height>80</height>
     </rect>
    </property>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>100</x>
+      <y>30</y>
+      <width>311</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>工业级集中监控系统</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QWidget" name="widget_2" native="true">
    <property name="geometry">

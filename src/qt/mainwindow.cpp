@@ -8,9 +8,10 @@
 #include <QWidget>
 #include <QMouseEvent>
 
+#include "menu/dialogsetting.h"
 #include "menu/dialogabout.h"
 #include "menu/dialogdevicedata.h"
-#include "notifymanager.h"
+#include "notify/notifymanager.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -32,16 +33,14 @@ MainWindow::MainWindow(QWidget *parent) :
     QTreeWidgetTest();
     //QMessageBox::information(this,tr("asdfadsf"),tr("adsfasdf"),QMessageBox::Yes | QMessageBox::No, QMessageBox::Yes);
 
-    setCentralWidget(ui->dockWidget_5);
+    setCentralWidget(ui->dockWidgetMain);
 
     //允许嵌套dock
     //setDockNestingEnabled(true);
     //记录所有的dock指针
-    m_docks.append(ui->dockWidget_2);
-    m_docks.append(ui->dockWidget_3);
-    m_docks.append(ui->dockWidget_4);
+    //m_docks.append(ui->dockWidget_2);
 
-    splitDockWidget(ui->dockWidget,ui->dockWidget_2,Qt::Horizontal);
+    //splitDockWidget(ui->dockWidget,ui->dockWidget_2,Qt::Horizontal);
 
     NotifyManager *manager = new NotifyManager(this);
     manager->notify("新消息", "新消息新消息新消息新消息", "://img/message.png", "http://www.github.com");
@@ -149,6 +148,13 @@ void MainWindow::on_actionAbout_triggered()
 void MainWindow::on_action4_2_triggered()
 {
     DialogDeviceData dialog(this);
+    dialog.setModal(true);
+    dialog.exec();
+}
+
+void MainWindow::on_actionSetting_triggered()
+{
+    DialogSetting dialog(this);
     dialog.setModal(true);
     dialog.exec();
 }

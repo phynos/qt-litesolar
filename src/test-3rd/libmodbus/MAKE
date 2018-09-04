@@ -22,4 +22,4 @@ DEFINES =
 # -finput-charset=utf8
 
 test_libmodbus: test.c
-	$(CC) -o $(OUTPUT)/$@ $(DEFINES) $(CCOPTS) $(OUTPUT)/libmodbus.so test.c $(CCLIBS)
+	$(CC) -o $(OUTPUT)/$@ $(DEFINES) $(CCOPTS) $(OUTPUT)/libmodbus.dll test.c $(CCLIBS)

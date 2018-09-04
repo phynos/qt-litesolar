@@ -2,6 +2,7 @@
 #define DIALOGDEVICEDATA_H
 
 #include <QDialog>
+#include <QTableWidget>
 
 namespace Ui {
 class DialogDeviceData;
@@ -17,6 +18,12 @@ public:
 
 private:
     Ui::DialogDeviceData *ui;
+
+
+    void loadDataFromCode(QTableWidget *table);
+
+    void loadDataFromModel(QTableWidget *table);
+
 };
 
 #endif // DIALOGDEVICEDATA_H

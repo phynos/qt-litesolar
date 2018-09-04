@@ -1,8 +1,10 @@
 
 --搜索lua模块
 package.path = 'lua/?.lua;'   
---搜索so模块
-package.cpath = "./?.so" --so搜寻路劲     
+-- 动态库：dll
+package.cpath = "./?.dll"
+-- 动态库：so
+-- package.cpath = "./?.so"
 
 -- 引入lua模块
 test_base = require("test_base")
