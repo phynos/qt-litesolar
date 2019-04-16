@@ -3,4 +3,3 @@
 *.exe
 *.so
 *.dll
-!lua53.dll
