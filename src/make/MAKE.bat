@@ -18,10 +18,10 @@ echo 1=所有
 echo 2=sqlite3
 echo 3=duktape
 echo 4=lua
-echo 5=暂缺
-echo 101=libmodbus
-echo 201=lsqlite3
-echo 202=lmodbus
+echo 5=libmodbus
+echo 6=freemodbus
+echo 401=lsqlite3
+echo 402=lmodbus
 echo 999=退出
 echo .  
 set /p target=请选择构建目标：
@@ -30,10 +30,10 @@ if /i "%target%" == "1" goto all
 if /i "%target%" == "2" goto sqlite3
 if /i "%target%" == "3" goto duktape
 if /i "%target%" == "4" goto lua
-if /i "%target%" == "5" goto other
-if /i "%target%" == "101" goto libmodbus
-if /i "%target%" == "201" goto lsqlite3
-if /i "%target%" == "202" goto lmodbus
+if /i "%target%" == "5" goto libmodbus
+if /i "%target%" == "6" goto freemodbus
+if /i "%target%" == "401" goto lsqlite3
+if /i "%target%" == "402" goto lmodbus
 if /i "%target%" == "999" goto end
 echo 你必须选择一个目标 goto loop
 
@@ -46,6 +46,11 @@ goto loop
 :all
 mingw32-make -f MAKE
 goto end
+
+:freemodbus
+echo 暂不支持
+echo:
+goto loop
 
 :libmodbus
 echo 开始构建libmodbus动态库

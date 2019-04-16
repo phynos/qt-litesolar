@@ -47,9 +47,6 @@ OUTPUT = ../bin
 duk-all: duktape duk-module-node duk-console
 	@echo 编译所有的duk模块
 
-libmodbus: 	libmodbus
-	@echo target:libmodbus.dll
-
 lua:
 	@echo not surport....	
 
