@@ -44,7 +44,7 @@ echo:
 goto loop
 
 :all
-mingw32-make -f MAKE
+mingw32-make -f MAKE.mk
 goto end
 
 :freemodbus
@@ -54,49 +54,49 @@ goto loop
 
 :libmodbus
 echo 开始构建libmodbus动态库
-mingw32-make -f MAKE libmodbus
+mingw32-make -f MAKE.mk libmodbus
 pause
 cls
 goto loop
 
 :duktape
 echo 开始构建duktape动态库
-mingw32-make -f MAKE duk-all
+mingw32-make -f MAKE.mk duk-all
 pause
 cls
 goto loop
 
 :lua
 echo 开始构建lua动态库
-mingw32-make -f MAKE lua
+mingw32-make -f MAKE.mk lua
 pause
 cls
 goto loop
 
 :libmodbus_lua
 echo 开始构建libmodbus-lua动态库
-mingw32-make -f MAKE libmodbus_lua
+mingw32-make -f MAKE.mk libmodbus_lua
 pause
 cls
 goto loop
 
 :sqlite3
 echo 开始构建sqlite3动态库
-mingw32-make -f MAKE sqlite3
+mingw32-make -f MAKE.mk sqlite3
 pause
 cls
 goto loop
 
 :lsqlite3
 echo 开始构建lsqlite3动态库
-mingw32-make -f MAKE lsqlite3
+mingw32-make -f MAKE.mk lsqlite3
 pause
 cls
 goto loop
 
 :lmodbus
 echo 开始构建lmodbus动态库
-mingw32-make -f MAKE lmodbus
+mingw32-make -f MAKE.mk lmodbus
 pause
 cls
 goto loop
