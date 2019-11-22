@@ -1,6 +1,8 @@
 @echo off
 color 0a
 
+set MAKEFILE=Makefile
+
 mingw32-make -version
 If errorlevel 1 (
     echo 没有安装mingw，请安装
@@ -44,7 +46,7 @@ echo:
 goto loop
 
 :all
-mingw32-make -f MAKE.mk
+mingw32-make -f %MAKEFILE%
 goto end
 
 :freemodbus
@@ -54,49 +56,49 @@ goto loop
 
 :libmodbus
 echo 开始构建libmodbus动态库
-mingw32-make -f MAKE.mk libmodbus
+mingw32-make -f %MAKEFILE% libmodbus
 pause
 cls
 goto loop
 
 :duktape
 echo 开始构建duktape动态库
-mingw32-make -f MAKE.mk duk-all
+mingw32-make -f %MAKEFILE% duk-all
 pause
 cls
 goto loop
 
 :lua
 echo 开始构建lua动态库
-mingw32-make -f MAKE.mk lua
+mingw32-make -f %MAKEFILE% lua
 pause
 cls
 goto loop
 
 :libmodbus_lua
 echo 开始构建libmodbus-lua动态库
-mingw32-make -f MAKE.mk libmodbus_lua
+mingw32-make -f %MAKEFILE% libmodbus_lua
 pause
 cls
 goto loop
 
 :sqlite3
 echo 开始构建sqlite3动态库
-mingw32-make -f MAKE.mk sqlite3
+mingw32-make -f %MAKEFILE% sqlite3
 pause
 cls
 goto loop
 
 :lsqlite3
 echo 开始构建lsqlite3动态库
-mingw32-make -f MAKE.mk lsqlite3
+mingw32-make -f %MAKEFILE% lsqlite3
 pause
 cls
 goto loop
 
 :lmodbus
 echo 开始构建lmodbus动态库
-mingw32-make -f MAKE.mk lmodbus
+mingw32-make -f %MAKEFILE% lmodbus
 pause
 cls
 goto loop
