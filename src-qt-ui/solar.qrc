@@ -1,0 +1,36 @@
+<RCC>
+    <qresource prefix="/xml">
+        <file>rc/config.xml</file>
+    </qresource>
+    <qresource prefix="/image">
+        <file>rc/10.png</file>
+        <file>rc/35.png</file>
+        <file>rc/38.png</file>
+        <file>rc/59.png</file>
+        <file>rc/edit-device.png</file>
+        <file>rc/ic_launcher.png</file>
+        <file>rc/icon-case.png</file>
+        <file>rc/icon-control.png</file>
+        <file>rc/icon-data.png</file>
+        <file>rc/icon-exit.png</file>
+        <file>rc/icon-history.png</file>
+        <file>rc/icon-play.png</file>
+        <file>rc/icon-real.png</file>
+        <file>rc/icon-setting.png</file>
+        <file>rc/icon-stop.png</file>
+        <file>rc/iocn-add.png</file>
+        <file>rc/iocn-remove.png</file>
+        <file>rc/tv.png</file>
+    </qresource>
+    <qresource prefix="/qss">
+        <file>rc/css.qss</file>
+    </qresource>
+    <qresource prefix="/icon">
+        <file>rc/cai.png</file>
+        <file>rc/cai2.png</file>
+        <file>rc/expand_normal.png</file>
+        <file>rc/expand_selected.png</file>
+        <file>rc/unexpand_normal.png</file>
+        <file>rc/unexpand_selected.png</file>
+    </qresource>
+</RCC>

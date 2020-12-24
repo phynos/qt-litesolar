@@ -1,0 +1,2 @@
+del *.so
+del *.exe
