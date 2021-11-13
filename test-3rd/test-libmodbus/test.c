@@ -4,7 +4,7 @@
 #include "modbus.h"
 #include <memory.h>
 
-#include <windows.h>
+#include <Windows.h>
 
 int main(void)
 {
@@ -50,7 +50,7 @@ int main(void)
         }
         printf("\n");
         printf("-------------------------------------------\n");
-        sleep(1);
+        Sleep(1);
     }
 
     //7-关闭modbus端口

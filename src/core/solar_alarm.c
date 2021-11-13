@@ -7,7 +7,7 @@
 #include "solar_rwlock.h"
 #include "solar_alarm.h"
 
-#include "../3rd/sqlite3/sqlite3.h"
+#include "../../lib/sqlite-3.24.0/sqlite3.h"
 
 #define TAG "solar_alarm"
 
