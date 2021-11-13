@@ -10,10 +10,10 @@ QUICKJS_SOURCES = src/3rd/quickjs/quickjs.c \
 SQLITE3_SOURCES = src/3rd/sqlite-3.24.0/sqlite3.c
 
 # libmodbus源码
-LIBMODBUS_SOURCES = src/3rd/libmodbus/modbus.c \
- src/3rd/libmodbus/modbus-data.c \
- src/3rd/libmodbus/modbus-rtu.c \
- src/3rd/libmodbus/modbus-tcp.c
+LIBMODBUS_SOURCES = lib/libmodbus/modbus.c \
+ lib/libmodbus/modbus-data.c \
+ lib/libmodbus/modbus-rtu.c \
+ lib/libmodbus/modbus-tcp.c
 
 # libmodbus lua绑定源码
 LMODBUS_SOURCES = src/3rd/lua-libmodbus/lua-modbus.c
