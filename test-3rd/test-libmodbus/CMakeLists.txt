@@ -8,6 +8,11 @@ include_directories("${CMAKE_SOURCE_DIR}/lib/libmodbus/")
 add_executable(TestLibmodbus test.c)
 
 TARGET_LINK_LIBRARIES(TestLibmodbus 
-    Ws2_32
     libmodbus
 )
+
+if(WIN32)
+    TARGET_LINK_LIBRARIES(TestLibmodbus 
+        Ws2_32
+    )
+endif()
