@@ -7,5 +7,7 @@ if(WIN32)
     TARGET_LINK_LIBRARIES(WindowExample 
         gdi32
     )
+else()
+    message("该程序只支持win32")
 endif()
 
