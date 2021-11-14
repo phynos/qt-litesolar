@@ -14,10 +14,3 @@ SET(LIB_SRC ${ALL_SRC})
 LIST(REMOVE_ITEM LIB_SRC "lua.c" "luac.c")
 
 ADD_LIBRARY(lua SHARED ${LIB_SRC})
-
-ADD_EXECUTABLE(luaexec lua.c)
-target_link_libraries(luaexec lua)
-set_target_properties(luaexec PROPERTIES OUTPUT_NAME lua)
-
-ADD_EXECUTABLE(luac luac.c)
-target_link_libraries(luac lua)
