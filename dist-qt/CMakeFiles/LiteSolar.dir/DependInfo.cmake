@@ -4,6 +4,32 @@ set(CMAKE_DEPENDS_IN_PROJECT_ONLY OFF)
 
 # The set of languages for which implicit dependencies are needed:
 set(CMAKE_DEPENDS_LANGUAGES
+  "RC"
+  )
+# The set of files for implicit dependencies of each language:
+set(CMAKE_DEPENDS_CHECK_RC
+  "D:/workspace-qt/qt-litesolar/src-qt-ui/logo.rc" "D:/workspace-qt/qt-litesolar/dist-qt/CMakeFiles/LiteSolar.dir/logo.obj"
+  )
+
+# Preprocessor definitions for this target.
+set(CMAKE_TARGET_DEFINITIONS_RC
+  "QT_CORE_LIB"
+  "QT_GUI_LIB"
+  "QT_NO_DEBUG"
+  "QT_WIDGETS_LIB"
+  )
+
+# The include file search paths:
+set(CMAKE_RC_TARGET_INCLUDE_PATH
+  "."
+  "D:/workspace-qt/qt-litesolar/src-qt-ui"
+  "LiteSolar_autogen/include"
+  "D:/Application/Qt/Qt5.9.6/5.9.6/mingw53_32/include"
+  "D:/Application/Qt/Qt5.9.6/5.9.6/mingw53_32/include/QtCore"
+  "D:/Application/Qt/Qt5.9.6/5.9.6/mingw53_32/./mkspecs/win32-g++"
+  "D:/Application/Qt/Qt5.9.6/5.9.6/mingw53_32/include/QtGui"
+  "D:/Application/Qt/Qt5.9.6/5.9.6/mingw53_32/include/QtANGLE"
+  "D:/Application/Qt/Qt5.9.6/5.9.6/mingw53_32/include/QtWidgets"
   )
 
 # The set of dependency files which are needed:

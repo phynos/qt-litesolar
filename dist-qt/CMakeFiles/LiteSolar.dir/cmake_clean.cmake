@@ -5,6 +5,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/LiteSolar.dir/LiteSolar_autogen/mocs_compilation.obj.d"
   "CMakeFiles/LiteSolar.dir/device/formdevice.obj"
   "CMakeFiles/LiteSolar.dir/device/formdevice.obj.d"
+  "CMakeFiles/LiteSolar.dir/logo.obj"
   "CMakeFiles/LiteSolar.dir/main.obj"
   "CMakeFiles/LiteSolar.dir/main.obj.d"
   "CMakeFiles/LiteSolar.dir/mainwindow.obj"
@@ -38,6 +39,6 @@ file(REMOVE_RECURSE
 )
 
 # Per-language clean rules from dependency scanning.
-foreach(lang CXX)
+foreach(lang CXX RC)
   include(CMakeFiles/LiteSolar.dir/cmake_clean_${lang}.cmake OPTIONAL)
 endforeach()

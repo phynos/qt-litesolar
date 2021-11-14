@@ -187,6 +187,11 @@ device/formdevice.s:
 .PHONY : device/formdevice.s
 
 # target to build an object file
+logo.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\LiteSolar.dir\build.make CMakeFiles/LiteSolar.dir/logo.obj
+.PHONY : logo.obj
+
+# target to build an object file
 main.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\LiteSolar.dir\build.make CMakeFiles/LiteSolar.dir/main.obj
 .PHONY : main.obj
@@ -370,6 +375,7 @@ help:
 	@echo ... device/formdevice.obj
 	@echo ... device/formdevice.i
 	@echo ... device/formdevice.s
+	@echo ... logo.obj
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s

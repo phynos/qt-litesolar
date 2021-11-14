@@ -63,7 +63,9 @@ set(LiteSolar_FORMS
     )
 # RC文件配置
 set(LiteSolar_RESOURCES 
-    solar.qrc)
+    solar.qrc
+    logo.rc
+    )
 
 if(WIN32) 
     # 这里如果不加WIN32，会导致编译的可执行文件运行时候会同时弹出一个命令行终端
