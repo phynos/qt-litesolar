@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "../core/solar_alarm.h"
+#include "../src/core/solar_alarm.h"
 
 
 int main(int argc, char **argv){
