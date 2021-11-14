@@ -1,2 +1,0 @@
-del *.so
-del *.exe
