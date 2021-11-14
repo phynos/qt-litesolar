@@ -1,0 +1,3 @@
+"C:\Program Files\CMake\bin\cmake.exe" -E rm -f CMakeFiles\LiteSolar.dir/objects.a
+D:\Application\Qt\Qt5.9.6\Tools\mingw530_32\bin\ar.exe qc CMakeFiles\LiteSolar.dir/objects.a @CMakeFiles\LiteSolar.dir\objects1.rsp
+D:\Application\Qt\Qt5.9.6\Tools\mingw530_32\bin\g++.exe -mwindows -Wl,--whole-archive CMakeFiles\LiteSolar.dir/objects.a -Wl,--no-whole-archive -o LiteSolar.exe -Wl,--out-implib,libLiteSolar.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\LiteSolar.dir\linklibs.rsp

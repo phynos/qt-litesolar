@@ -4,8 +4,6 @@ file(GLOB PUBLIC_HEADERS "*.h")
 #第一个参数为你需要构建的dll的名字，第二个为类型
 ADD_LIBRARY (libmodbus SHARED ${SRCS} ${PUBLIC_HEADERS})  
 include_directories(./)  
-# 指定dll的生成目录这里目录是D:/mylib，注意linux下是LIBRARY DESTINATION  windows下是 RUNTIME DESTINATION
-INSTALL(TARGETS libmodbus RUNTIME DESTINATION D:/lupc)   
 TARGET_LINK_LIBRARIES(libmodbus 
     Ws2_32
 )

@@ -1,0 +1,262 @@
+{
+	"BUILD_DIR" : "D:/workspace-qt/qt-litesolar/dist-qt/LiteSolar_autogen",
+	"CMAKE_BINARY_DIR" : "D:/workspace-qt/qt-litesolar/dist-qt",
+	"CMAKE_CURRENT_BINARY_DIR" : "D:/workspace-qt/qt-litesolar/dist-qt",
+	"CMAKE_CURRENT_SOURCE_DIR" : "D:/workspace-qt/qt-litesolar/src-qt-ui",
+	"CMAKE_EXECUTABLE" : "C:/Program Files/CMake/bin/cmake.exe",
+	"CMAKE_LIST_FILES" : 
+	[
+		"D:/workspace-qt/qt-litesolar/src-qt-ui/CMakeLists.txt",
+		"D:/workspace-qt/qt-litesolar/dist-qt/CMakeFiles/3.22.0-rc3/CMakeSystem.cmake",
+		"C:/Program Files/CMake/share/cmake-3.22/Modules/CMakeSystemSpecificInitialize.cmake",
+		"D:/workspace-qt/qt-litesolar/dist-qt/CMakeFiles/3.22.0-rc3/CMakeCCompiler.cmake",
+		"D:/workspace-qt/qt-litesolar/dist-qt/CMakeFiles/3.22.0-rc3/CMakeCXXCompiler.cmake",
+		"C:/Program Files/CMake/share/cmake-3.22/Modules/CMakeSystemSpecificInformation.cmake",
+		"C:/Program Files/CMake/share/cmake-3.22/Modules/CMakeGenericSystem.cmake",
+		"C:/Program Files/CMake/share/cmake-3.22/Modules/CMakeInitializeConfigs.cmake",
+		"C:/Program Files/CMake/share/cmake-3.22/Modules/Platform/Windows.cmake",
+		"C:/Program Files/CMake/share/cmake-3.22/Modules/Platform/WindowsPaths.cmake",
+		"C:/Program Files/CMake/share/cmake-3.22/Modules/CMakeCInformation.cmake",
+		"C:/Program Files/CMake/share/cmake-3.22/Modules/CMakeLanguageInformation.cmake",
+		"C:/Program Files/CMake/share/cmake-3.22/Modules/Compiler/GNU-C.cmake",
+		"C:/Program Files/CMake/share/cmake-3.22/Modules/Compiler/GNU.cmake",
+		"C:/Program Files/CMake/share/cmake-3.22/Modules/Compiler/CMakeCommonCompilerMacros.cmake",
+		"C:/Program Files/CMake/share/cmake-3.22/Modules/Platform/Windows-GNU-C.cmake",
+		"C:/Program Files/CMake/share/cmake-3.22/Modules/Platform/Windows-GNU.cmake",
+		"D:/workspace-qt/qt-litesolar/dist-qt/CMakeFiles/3.22.0-rc3/CMakeRCCompiler.cmake",
+		"C:/Program Files/CMake/share/cmake-3.22/Modules/CMakeRCInformation.cmake",
+		"C:/Program Files/CMake/share/cmake-3.22/Modules/Platform/Windows-windres.cmake",
+		"C:/Program Files/CMake/share/cmake-3.22/Modules/Platform/Windows-GNU-C-ABI.cmake",
+		"C:/Program Files/CMake/share/cmake-3.22/Modules/CMakeCommonLanguageInclude.cmake",
+		"C:/Program Files/CMake/share/cmake-3.22/Modules/CMakeCXXInformation.cmake",
+		"C:/Program Files/CMake/share/cmake-3.22/Modules/CMakeLanguageInformation.cmake",
+		"C:/Program Files/CMake/share/cmake-3.22/Modules/Compiler/GNU-CXX.cmake",
+		"C:/Program Files/CMake/share/cmake-3.22/Modules/Compiler/GNU.cmake",
+		"C:/Program Files/CMake/share/cmake-3.22/Modules/Platform/Windows-GNU-CXX.cmake",
+		"C:/Program Files/CMake/share/cmake-3.22/Modules/Platform/Windows-GNU.cmake",
+		"C:/Program Files/CMake/share/cmake-3.22/Modules/Platform/Windows-GNU-CXX-ABI.cmake",
+		"C:/Program Files/CMake/share/cmake-3.22/Modules/CMakeCommonLanguageInclude.cmake",
+		"D:/Application/Qt/Qt5.9.6/5.9.6/mingw53_32/lib/cmake/Qt5/Qt5ConfigVersion.cmake",
+		"D:/Application/Qt/Qt5.9.6/5.9.6/mingw53_32/lib/cmake/Qt5/Qt5Config.cmake",
+		"D:/Application/Qt/Qt5.9.6/5.9.6/mingw53_32/lib/cmake/Qt5/Qt5ModuleLocation.cmake",
+		"D:/Application/Qt/Qt5.9.6/5.9.6/mingw53_32/lib/cmake/Qt5Core/Qt5CoreConfigVersion.cmake",
+		"D:/Application/Qt/Qt5.9.6/5.9.6/mingw53_32/lib/cmake/Qt5Core/Qt5CoreConfig.cmake",
+		"D:/Application/Qt/Qt5.9.6/5.9.6/mingw53_32/lib/cmake/Qt5Core/Qt5CoreConfigExtras.cmake",
+		"D:/Application/Qt/Qt5.9.6/5.9.6/mingw53_32/lib/cmake/Qt5Core/Qt5CoreConfigExtrasMkspecDir.cmake",
+		"D:/Application/Qt/Qt5.9.6/5.9.6/mingw53_32/lib/cmake/Qt5Core/Qt5CoreMacros.cmake",
+		"C:/Program Files/CMake/share/cmake-3.22/Modules/CMakeParseArguments.cmake",
+		"D:/Application/Qt/Qt5.9.6/5.9.6/mingw53_32/lib/cmake/Qt5Gui/Qt5GuiConfigVersion.cmake",
+		"D:/Application/Qt/Qt5.9.6/5.9.6/mingw53_32/lib/cmake/Qt5Gui/Qt5GuiConfig.cmake",
+		"D:/Application/Qt/Qt5.9.6/5.9.6/mingw53_32/lib/cmake/Qt5Gui/Qt5Gui_QGifPlugin.cmake",
+		"D:/Application/Qt/Qt5.9.6/5.9.6/mingw53_32/lib/cmake/Qt5Gui/Qt5Gui_QICNSPlugin.cmake",
+		"D:/Application/Qt/Qt5.9.6/5.9.6/mingw53_32/lib/cmake/Qt5Gui/Qt5Gui_QICOPlugin.cmake",
+		"D:/Application/Qt/Qt5.9.6/5.9.6/mingw53_32/lib/cmake/Qt5Gui/Qt5Gui_QJpegPlugin.cmake",
+		"D:/Application/Qt/Qt5.9.6/5.9.6/mingw53_32/lib/cmake/Qt5Gui/Qt5Gui_QMinimalIntegrationPlugin.cmake",
+		"D:/Application/Qt/Qt5.9.6/5.9.6/mingw53_32/lib/cmake/Qt5Gui/Qt5Gui_QOffscreenIntegrationPlugin.cmake",
+		"D:/Application/Qt/Qt5.9.6/5.9.6/mingw53_32/lib/cmake/Qt5Gui/Qt5Gui_QTgaPlugin.cmake",
+		"D:/Application/Qt/Qt5.9.6/5.9.6/mingw53_32/lib/cmake/Qt5Gui/Qt5Gui_QTiffPlugin.cmake",
+		"D:/Application/Qt/Qt5.9.6/5.9.6/mingw53_32/lib/cmake/Qt5Gui/Qt5Gui_QTuioTouchPlugin.cmake",
+		"D:/Application/Qt/Qt5.9.6/5.9.6/mingw53_32/lib/cmake/Qt5Gui/Qt5Gui_QWbmpPlugin.cmake",
+		"D:/Application/Qt/Qt5.9.6/5.9.6/mingw53_32/lib/cmake/Qt5Gui/Qt5Gui_QWebpPlugin.cmake",
+		"D:/Application/Qt/Qt5.9.6/5.9.6/mingw53_32/lib/cmake/Qt5Gui/Qt5Gui_QWindowsIntegrationPlugin.cmake",
+		"D:/Application/Qt/Qt5.9.6/5.9.6/mingw53_32/lib/cmake/Qt5Gui/Qt5GuiConfigExtras.cmake",
+		"D:/Application/Qt/Qt5.9.6/5.9.6/mingw53_32/lib/cmake/Qt5Widgets/Qt5WidgetsConfigVersion.cmake",
+		"D:/Application/Qt/Qt5.9.6/5.9.6/mingw53_32/lib/cmake/Qt5Widgets/Qt5WidgetsConfig.cmake",
+		"D:/Application/Qt/Qt5.9.6/5.9.6/mingw53_32/lib/cmake/Qt5Widgets/Qt5WidgetsConfigExtras.cmake",
+		"D:/Application/Qt/Qt5.9.6/5.9.6/mingw53_32/lib/cmake/Qt5Widgets/Qt5WidgetsMacros.cmake",
+		"C:/Program Files/CMake/share/cmake-3.22/Modules/CMakeParseArguments.cmake",
+		"D:/Application/Qt/Qt5.9.6/5.9.6/mingw53_32/lib/cmake/Qt5Sql/Qt5SqlConfigVersion.cmake",
+		"D:/Application/Qt/Qt5.9.6/5.9.6/mingw53_32/lib/cmake/Qt5Sql/Qt5SqlConfig.cmake",
+		"D:/Application/Qt/Qt5.9.6/5.9.6/mingw53_32/lib/cmake/Qt5Sql/Qt5Sql_QMYSQLDriverPlugin.cmake",
+		"D:/Application/Qt/Qt5.9.6/5.9.6/mingw53_32/lib/cmake/Qt5Sql/Qt5Sql_QODBCDriverPlugin.cmake",
+		"D:/Application/Qt/Qt5.9.6/5.9.6/mingw53_32/lib/cmake/Qt5Sql/Qt5Sql_QPSQLDriverPlugin.cmake",
+		"D:/Application/Qt/Qt5.9.6/5.9.6/mingw53_32/lib/cmake/Qt5Sql/Qt5Sql_QSQLiteDriverPlugin.cmake",
+		"D:/Application/Qt/Qt5.9.6/5.9.6/mingw53_32/lib/cmake/Qt5Xml/Qt5XmlConfigVersion.cmake",
+		"D:/Application/Qt/Qt5.9.6/5.9.6/mingw53_32/lib/cmake/Qt5Xml/Qt5XmlConfig.cmake",
+		"D:/workspace-qt/qt-litesolar/src-qt-ui/solar.qrc"
+	],
+	"CMAKE_SOURCE_DIR" : "D:/workspace-qt/qt-litesolar/src-qt-ui",
+	"DEP_FILE" : "",
+	"DEP_FILE_RULE_NAME" : "",
+	"HEADERS" : 
+	[
+		[
+			"D:/workspace-qt/qt-litesolar/src-qt-ui/device/formdevice.h",
+			"MU",
+			"GULY2SVRVA/moc_formdevice.cpp",
+			null
+		],
+		[
+			"D:/workspace-qt/qt-litesolar/src-qt-ui/mainwindow.h",
+			"MU",
+			"EWIEGA46WW/moc_mainwindow.cpp",
+			null
+		],
+		[
+			"D:/workspace-qt/qt-litesolar/src-qt-ui/menu/colordefines.h",
+			"MU",
+			"ETVDZ3V6H3/moc_colordefines.cpp",
+			null
+		],
+		[
+			"D:/workspace-qt/qt-litesolar/src-qt-ui/menu/dialogabout.h",
+			"MU",
+			"ETVDZ3V6H3/moc_dialogabout.cpp",
+			null
+		],
+		[
+			"D:/workspace-qt/qt-litesolar/src-qt-ui/menu/dialogdevicedata.h",
+			"MU",
+			"ETVDZ3V6H3/moc_dialogdevicedata.cpp",
+			null
+		],
+		[
+			"D:/workspace-qt/qt-litesolar/src-qt-ui/menu/dialogdeviceevents.h",
+			"MU",
+			"ETVDZ3V6H3/moc_dialogdeviceevents.cpp",
+			null
+		],
+		[
+			"D:/workspace-qt/qt-litesolar/src-qt-ui/menu/dialogevents.h",
+			"MU",
+			"ETVDZ3V6H3/moc_dialogevents.cpp",
+			null
+		],
+		[
+			"D:/workspace-qt/qt-litesolar/src-qt-ui/menu/dialoghistoryline.h",
+			"MU",
+			"ETVDZ3V6H3/moc_dialoghistoryline.cpp",
+			null
+		],
+		[
+			"D:/workspace-qt/qt-litesolar/src-qt-ui/menu/dialogsetting.h",
+			"MU",
+			"ETVDZ3V6H3/moc_dialogsetting.cpp",
+			null
+		],
+		[
+			"D:/workspace-qt/qt-litesolar/src-qt-ui/notify/notify.h",
+			"MU",
+			"FBLH2IUA2P/moc_notify.cpp",
+			null
+		],
+		[
+			"D:/workspace-qt/qt-litesolar/src-qt-ui/notify/notifymanager.h",
+			"MU",
+			"FBLH2IUA2P/moc_notifymanager.cpp",
+			null
+		],
+		[
+			"D:/workspace-qt/qt-litesolar/src-qt-ui/tv/dialogtv.h",
+			"MU",
+			"I5JQQ7UBLY/moc_dialogtv.cpp",
+			null
+		]
+	],
+	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
+	"INCLUDE_DIR" : "D:/workspace-qt/qt-litesolar/dist-qt/LiteSolar_autogen/include",
+	"MOC_COMPILATION_FILE" : "D:/workspace-qt/qt-litesolar/dist-qt/LiteSolar_autogen/mocs_compilation.cpp",
+	"MOC_DEFINITIONS" : [ "QT_CORE_LIB", "QT_GUI_LIB", "QT_NO_DEBUG", "QT_WIDGETS_LIB" ],
+	"MOC_DEPEND_FILTERS" : 
+	[
+		[
+			"Q_PLUGIN_METADATA",
+			"[\n][ \t]*Q_PLUGIN_METADATA[ \t]*\\([^\\)]*FILE[ \t]*\"([^\"]+)\""
+		]
+	],
+	"MOC_INCLUDES" : 
+	[
+		"D:/workspace-qt/qt-litesolar/dist-qt",
+		"D:/workspace-qt/qt-litesolar/src-qt-ui",
+		"D:/Application/Qt/Qt5.9.6/5.9.6/mingw53_32/include",
+		"D:/Application/Qt/Qt5.9.6/5.9.6/mingw53_32/include/QtCore",
+		"D:/Application/Qt/Qt5.9.6/5.9.6/mingw53_32/mkspecs/win32-g++",
+		"D:/Application/Qt/Qt5.9.6/5.9.6/mingw53_32/include/QtGui",
+		"D:/Application/Qt/Qt5.9.6/5.9.6/mingw53_32/include/QtANGLE",
+		"D:/Application/Qt/Qt5.9.6/5.9.6/mingw53_32/include/QtWidgets",
+		"D:/Application/Qt/Qt5.9.6/Tools/mingw530_32/lib/gcc/i686-w64-mingw32/5.3.0/include",
+		"D:/Application/Qt/Qt5.9.6/Tools/mingw530_32/lib/gcc/i686-w64-mingw32/5.3.0/include-fixed",
+		"D:/Application/Qt/Qt5.9.6/Tools/mingw530_32/i686-w64-mingw32/include",
+		"D:/Application/Qt/Qt5.9.6/Tools/mingw530_32/i686-w64-mingw32/include/c++",
+		"D:/Application/Qt/Qt5.9.6/Tools/mingw530_32/i686-w64-mingw32/include/c++/i686-w64-mingw32",
+		"D:/Application/Qt/Qt5.9.6/Tools/mingw530_32/i686-w64-mingw32/include/c++/backward"
+	],
+	"MOC_MACRO_NAMES" : [ "Q_OBJECT", "Q_GADGET", "Q_NAMESPACE", "Q_NAMESPACE_EXPORT" ],
+	"MOC_OPTIONS" : [],
+	"MOC_PATH_PREFIX" : false,
+	"MOC_PREDEFS_CMD" : 
+	[
+		"D:/Application/Qt/Qt5.9.6/Tools/mingw530_32/bin/g++.exe",
+		"-dM",
+		"-E",
+		"-c",
+		"C:/Program Files/CMake/share/cmake-3.22/Modules/CMakeCXXCompilerABI.cpp"
+	],
+	"MOC_PREDEFS_FILE" : "D:/workspace-qt/qt-litesolar/dist-qt/LiteSolar_autogen/moc_predefs.h",
+	"MOC_RELAXED_MODE" : false,
+	"MOC_SKIP" : [],
+	"MULTI_CONFIG" : false,
+	"PARALLEL" : 8,
+	"PARSE_CACHE_FILE" : "D:/workspace-qt/qt-litesolar/dist-qt/CMakeFiles/LiteSolar_autogen.dir/ParseCache.txt",
+	"QT_MOC_EXECUTABLE" : "D:/Application/Qt/Qt5.9.6/5.9.6/mingw53_32/bin/moc.exe",
+	"QT_UIC_EXECUTABLE" : "D:/Application/Qt/Qt5.9.6/5.9.6/mingw53_32/bin/uic.exe",
+	"QT_VERSION_MAJOR" : 5,
+	"QT_VERSION_MINOR" : 9,
+	"SETTINGS_FILE" : "D:/workspace-qt/qt-litesolar/dist-qt/CMakeFiles/LiteSolar_autogen.dir/AutogenUsed.txt",
+	"SOURCES" : 
+	[
+		[
+			"D:/workspace-qt/qt-litesolar/src-qt-ui/device/formdevice.cpp",
+			"MU",
+			null
+		],
+		[ "D:/workspace-qt/qt-litesolar/src-qt-ui/main.cpp", "MU", null ],
+		[ "D:/workspace-qt/qt-litesolar/src-qt-ui/mainwindow.cpp", "MU", null ],
+		[
+			"D:/workspace-qt/qt-litesolar/src-qt-ui/menu/dialogabout.cpp",
+			"MU",
+			null
+		],
+		[
+			"D:/workspace-qt/qt-litesolar/src-qt-ui/menu/dialogdevicedata.cpp",
+			"MU",
+			null
+		],
+		[
+			"D:/workspace-qt/qt-litesolar/src-qt-ui/menu/dialogdeviceevents.cpp",
+			"MU",
+			null
+		],
+		[
+			"D:/workspace-qt/qt-litesolar/src-qt-ui/menu/dialogevents.cpp",
+			"MU",
+			null
+		],
+		[
+			"D:/workspace-qt/qt-litesolar/src-qt-ui/menu/dialoghistoryline.cpp",
+			"MU",
+			null
+		],
+		[
+			"D:/workspace-qt/qt-litesolar/src-qt-ui/menu/dialogsetting.cpp",
+			"MU",
+			null
+		],
+		[
+			"D:/workspace-qt/qt-litesolar/src-qt-ui/notify/notify.cpp",
+			"MU",
+			null
+		],
+		[
+			"D:/workspace-qt/qt-litesolar/src-qt-ui/notify/notifymanager.cpp",
+			"MU",
+			null
+		],
+		[ "D:/workspace-qt/qt-litesolar/src-qt-ui/tv/dialogtv.cpp", "MU", null ]
+	],
+	"UIC_OPTIONS" : [],
+	"UIC_SEARCH_PATHS" : [],
+	"UIC_SKIP" : [],
+	"UIC_UI_FILES" : [],
+	"VERBOSITY" : 0
+}
