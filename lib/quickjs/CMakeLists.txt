@@ -37,10 +37,10 @@ add_compile_options(
         -D_GNU_SOURCE -DCONFIG_VERSION=\"2020-03-16\" 
         -DCONFIG_BIGNUM
         # 打印编译后的字节码
-        -DDUMP_BYTECODE=111111
-        -DFORCE_GC_AT_MALLOC
-        -DDUMP_GC # dump the occurence of the automatic GC
-        -DDUMP_GC_FREE # dump objects freed by the garbage collector
+    #    -DDUMP_BYTECODE=111111
+    #    -DFORCE_GC_AT_MALLOC
+    #    -DDUMP_GC # dump the occurence of the automatic GC
+    #    -DDUMP_GC_FREE # dump objects freed by the garbage collector
 #        -DDUMP_LEAKS  1
 #        -DDUMP_MEM
 #        -DDUMP_OBJECTS
@@ -60,9 +60,27 @@ add_library(quickjs SHARED quickjs.c libregexp.c libunicode.c cutils.c quickjs-l
 add_executable(qjsc qjsc.c)
 target_link_libraries(qjsc quickjs m)
 if(WIN32) 
-
+    MESSAGE("QUICKJS WIN32...")
 else()
     TARGET_LINK_LIBRARIES(qjsc
+    dl
+    )
+endif()
+
+# add_custom_target(repl.c
+#        COMMAND ./qjsc -c -o ../repl.c -m ../repl.js
+#        DEPENDS qjsc)
+# add_custom_target(qjscalc.c
+#        COMMAND ./qjsc -fbignum -c -o ../qjscalc.c ../qjscalc.js
+#        DEPENDS qjsc)
+
+#生成qjs需要用上面的命令动态生成c文件
+add_executable(qjs qjs.c repl.c qjscalc.c)
+target_link_libraries(qjs quickjs m)
+if(WIN32) 
+    MESSAGE("QUICKJS WIN32...")
+else()
+    TARGET_LINK_LIBRARIES(qjs
     dl
     )
 endif()

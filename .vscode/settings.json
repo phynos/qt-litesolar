@@ -1,5 +1,6 @@
 {
     "files.associations": {
-        "qwidget": "cpp"
+        "qwidget": "cpp",
+        "quickjs.h": "c"
     }
 }

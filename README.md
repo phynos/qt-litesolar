@@ -13,11 +13,10 @@
 ## 脚本引擎
 
 ### lua引擎
-基于lua5.3版本构建，可以在test-3rd中找到测试和基本使用方法
+基于lua5.3
 
 ### javascript引擎
-基于duktape构建，可以在test-3rd中找到测试和基本使用方法  
-测试代码已经完成基本js绑定测试（js文件支持require调用）  
+基于quickjs
 
 ## 协议栈
 
