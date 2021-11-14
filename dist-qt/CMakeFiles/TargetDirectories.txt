@@ -1,4 +1,0 @@
-D:/workspace-qt/qt-litesolar/dist-qt/CMakeFiles/LiteSolar.dir
-D:/workspace-qt/qt-litesolar/dist-qt/CMakeFiles/edit_cache.dir
-D:/workspace-qt/qt-litesolar/dist-qt/CMakeFiles/rebuild_cache.dir
-D:/workspace-qt/qt-litesolar/dist-qt/CMakeFiles/LiteSolar_autogen.dir

@@ -1,1 +1,0 @@
- D:/Application/Qt/Qt5.9.6/5.9.6/mingw53_32/lib/libQt5Widgets.a D:/Application/Qt/Qt5.9.6/5.9.6/mingw53_32/lib/libQt5Gui.a D:/Application/Qt/Qt5.9.6/5.9.6/mingw53_32/lib/libQt5Core.a -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32 
