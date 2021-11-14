@@ -4,7 +4,11 @@
 #include "modbus.h"
 #include <memory.h>
 
+#if defined(_WIN32)
+
 #include <Windows.h>
+
+#endif
 
 int main(void)
 {
