@@ -1,4 +1,4 @@
 mkdir -p dist
 cd dist
-cmake ../
+cmake -G "MinGW Makefiles" ../
 mingw32-make

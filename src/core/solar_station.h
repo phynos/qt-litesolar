@@ -3,15 +3,15 @@
 
 
 typedef struct _solar_unit {
-	int id,
-	char *name,
+	int id;
+	char *name;
 	char *remark
 } solar_unit;
 
 struct solar_station
 {
-	int id,
-	char *name,
+	int id;
+	char *name;
 	int capacity
 };
 

@@ -2,29 +2,29 @@
 
 
 struct solar_device {
-	int id,
-	long createDateTime,
-	char *name,
-	int deviceTypeId,
-	int protocolId,
-	long devcieInstallDateTime,
+	int id;
+	long createDateTime;
+	char *name;
+	int deviceTypeId;
+	int protocolId;
+	long devcieInstallDateTime;
 
-	int portType,
-	int writeDBInterval,
+	int portType;
+	int writeDBInterval;
 
-	char *ip,
-	int port,
+	char *ip;
+	int port;
 
-	char *com,
-	int baudrate,
-	int dataBit,
-	int stopBit,
-	int parity,
+	char *com;
+	int baudrate;
+	int dataBit;
+	int stopBit;
+	int parity;
 
-	int writeTimeout,
-	int readTimeout,
+	int writeTimeout;
+	int readTimeout;
 
-	int slaveId,
+	int slaveId;
 
 	/* 设备通讯中断判定方式 */
 	int interruptType
