@@ -2,8 +2,8 @@
 *.a
 *build-*
 
+build
 dist
-dist-qt
 
 *.swp
 .DS_Store
