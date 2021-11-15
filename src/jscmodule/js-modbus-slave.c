@@ -44,15 +44,22 @@ static JSValue js_modbus_connect(JSContext *ctx, JSValueConst this_val, int argc
         modbus_free(mb);
         return JS_EXCEPTION;
     }
-    // 返回jscanvas对象
+    // 返回连接结果
     return JS_NewString(ctx, "连接成功");
 }
 
 static JSValue js_modbus_create(JSContext *ctx, JSValueConst this_val, int argc, JSValueConst *argv)
 {
     modbus_t *mb;
+    int port;
+    const char* ip;
+    if(argc != 2)
+        return JS_EXCEPTION;
+    ip = JS_ToCString(ctx, argv[0]);      
+    if (JS_ToInt32(ctx, &port, argv[1]))
+        return JS_EXCEPTION;    
     //1-打开端口
-    mb = modbus_new_tcp("127.0.0.1", 502);
+    mb = modbus_new_tcp(ip, port);
     //2-设置从地址
     modbus_set_slave(mb, 1);
     // 创建对应的JS对象
@@ -60,16 +67,16 @@ static JSValue js_modbus_create(JSContext *ctx, JSValueConst this_val, int argc,
 
     //注册基本属性
     JS_SetPropertyStr(ctx, obj, "ip",
-                      JS_NewString(ctx, "127.0.0.1"));
+                      JS_NewString(ctx, ip));
     JS_SetPropertyStr(ctx, obj, "port",
-                      JS_NewString(ctx, "502"));
+                      JS_NewInt32(ctx, port));
     //在这里注册其他API
     JS_SetPropertyStr(ctx, obj, "connect", 
                       JS_NewCFunction(ctx, js_modbus_connect, "connect", 0));
 
-    // 绑定canvas对象
+    // 绑定JS对象
     JS_SetOpaque(obj, mb);
-    // 返回jscanvas对象
+    // 返回JS对象
     return obj;
 }
 
