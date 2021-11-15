@@ -2,8 +2,12 @@
 
 import {testChar, testCharLength, testObject, testRPN} from './test.js';
 
+import { setTimeout } from "os";
+
 import {default as test} from "./lib/libtest.js";
 import {default as modbus} from "./lib/libmodbus.js";
+
+setTimeout(() => { console.log("abcdefg") }, 300000);
 
 testChar();
 

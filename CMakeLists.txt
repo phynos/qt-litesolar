@@ -7,7 +7,7 @@ project(QtLiteSolar)
 #set(CMAKE_INSTALL_PREFIX ./dist)
 
 # 存放静态库的文件夹位置
-set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/bin)
+set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/bin-temp)
 # 存放动态库的文件夹位置
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/bin)
 # 存放可执行软件的目录

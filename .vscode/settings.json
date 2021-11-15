@@ -6,6 +6,9 @@
         "windows.h": "c",
         "modbus.h": "c",
         "js-modbus-slave.h": "c",
-        "random": "c"
+        "random": "c",
+        "cutils.h": "c",
+        "js-cmodule.h": "c",
+        "js-runtime.h": "c"
     }
 }
