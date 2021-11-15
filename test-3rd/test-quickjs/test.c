@@ -1,22 +1,29 @@
 
+#include <string.h>
 #include "quickjs/quickjs-libc.h"
 #include "quickjs/quickjs.h"
 #include "quickjs/cutils.h"
 
+static int eval_buf(JSContext *ctx, const void *buf, int buf_len,
+                    const char *filename, int eval_flags);
 static int eval_file(JSContext *ctx, const char *filename, int module);
-void AddBaseObj(JSContext *ctx);
 
 int main(int argc, char **argv)
 {
     JSRuntime *rt;
     JSContext *ctx;
-    rt = JS_NewRuntime();
-    ctx = JS_NewContextRaw(rt);
-    AddBaseObj(ctx);
-     /* loader for ES6 modules */
+    rt = JS_NewRuntime(); 
+    /* loader for ES6 modules */   
     JS_SetModuleLoaderFunc(rt, NULL, js_module_loader, NULL);
-    eval_file(ctx, "js/hello.js", 0);
-    js_std_free_handlers(rt);
+    ctx = JS_NewContext(rt);
+    // 在这里可以添加各种cfunction和cmodule的扩展，提供给JS调用
+    js_std_add_helpers(ctx, 0, 0);
+    js_init_module_std(ctx, "std");
+    js_init_module_os(ctx, "os");
+
+
+    eval_file(ctx, "js/index.js", JS_EVAL_TYPE_MODULE);
+  
     JS_FreeContext(ctx);
     JS_FreeRuntime(rt);
     return 0;
@@ -82,26 +89,4 @@ static int eval_file(JSContext *ctx, const char *filename, int module)
     ret = eval_buf(ctx, buf, buf_len, filename, eval_flags);
     js_free(ctx, buf);
     return ret;
-}
-
-void AddBaseObj(JSContext *ctx)
-{
-    JS_AddIntrinsicBaseObjects(ctx);
-    JS_AddIntrinsicDate(ctx);
-    JS_AddIntrinsicEval(ctx);
-    JS_AddIntrinsicStringNormalize(ctx);
-    JS_AddIntrinsicRegExp(ctx);
-    JS_AddIntrinsicJSON(ctx);
-    JS_AddIntrinsicProxy(ctx);
-    JS_AddIntrinsicMapSet(ctx);
-    JS_AddIntrinsicTypedArrays(ctx);
-    JS_AddIntrinsicPromise(ctx);
-    JS_AddIntrinsicBigInt(ctx);
-
-   
-
-    /* system modules */
-    
-    js_init_module_std(ctx, "std");
-    js_init_module_os(ctx, "os");
 }

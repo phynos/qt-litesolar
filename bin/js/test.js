@@ -109,7 +109,4 @@ function testRPN(){
 }
 
 
-testChar();
-testCharLength();
-testObject();
-testRPN();
+export {testChar, testCharLength, testObject, testRPN}

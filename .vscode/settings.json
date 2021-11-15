@@ -1,6 +1,8 @@
 {
     "files.associations": {
         "qwidget": "cpp",
-        "quickjs.h": "c"
+        "quickjs.h": "c",
+        "string.h": "c",
+        "windows.h": "c"
     }
 }
