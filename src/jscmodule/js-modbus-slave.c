@@ -45,7 +45,36 @@ static JSValue js_modbus_connect(JSContext *ctx, JSValueConst this_val, int argc
         return JS_EXCEPTION;
     }
     // 返回连接结果
-    return JS_NewString(ctx, "连接成功");
+    return JS_NewBool(ctx, JS_TRUE);
+}
+
+static JSValue js_modbus_read(JSContext *ctx, JSValueConst this_val, int argc, JSValueConst *argv)
+{
+    JSValue result,data;
+    uint16_t tab_reg[64]={0};
+    int offset,count;
+    if (JS_ToInt32(ctx, &offset, argv[0]))
+        return JS_EXCEPTION; 
+    if (JS_ToInt32(ctx, &count, argv[1]))
+        return JS_EXCEPTION;             
+    modbus_t *mb = (modbus_t *)JS_GetOpaque(this_val, _js_modbus_class_id);
+    
+    memset(tab_reg,0,64*2);
+    //读寄存器设置：寄存器地址、数量、数据缓冲
+    int regs = modbus_read_registers(mb, offset, count, tab_reg);
+
+    result = JS_NewObject(ctx);
+    JS_SetPropertyStr(ctx, result, "count", JS_NewInt32(ctx, regs));
+    if(regs > 0) {
+        data = JS_NewArray(ctx);
+        for (size_t i = 0; i < regs; i++)
+        {
+            JS_SetPropertyUint32(ctx, data, i, JS_NewInt32(ctx, tab_reg[i]));
+        }        
+    }
+    JS_SetPropertyStr(ctx, result, "data", data);
+
+    return result;
 }
 
 static JSValue js_modbus_create(JSContext *ctx, JSValueConst this_val, int argc, JSValueConst *argv)
@@ -72,7 +101,9 @@ static JSValue js_modbus_create(JSContext *ctx, JSValueConst this_val, int argc,
                       JS_NewInt32(ctx, port));
     //在这里注册其他API
     JS_SetPropertyStr(ctx, obj, "connect", 
-                      JS_NewCFunction(ctx, js_modbus_connect, "connect", 0));
+                      JS_NewCFunction(ctx, js_modbus_connect, "connect", 2));
+    JS_SetPropertyStr(ctx, obj, "read", 
+                      JS_NewCFunction(ctx, js_modbus_read, "read", 2));
 
     // 绑定JS对象
     JS_SetOpaque(obj, mb);

@@ -15,11 +15,12 @@ testCharLength();
 
 console.log(test.plus(1,2));
 
+//modbus测试
 var slave = modbus.createTcp("127.0.0.1", 502);
-for(var p in slave) {
-    var v = slave[p];
-    console.log("name=" + p + ", value=" + v);
-}
 var result = slave.connect();
 console.log(result);
+var result = slave.read(0,4);
+console.log(result.count);
+console.log(result.data.map(a => a+"").join(","));
+
 

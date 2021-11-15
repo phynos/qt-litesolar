@@ -13,6 +13,16 @@
 ## 脚本引擎
 基于quickjs
 
+``` js
+//modbus测试
+var slave = modbus.createTcp("127.0.0.1", 502);
+var result = slave.connect();
+console.log(result);
+var result = slave.read(0,4);
+console.log(result.count);
+console.log(result.data.map(a => a+"").join(","));
+```
+
 ## 协议栈
 
 ### modbus-slave
