@@ -11,11 +11,6 @@
 - test-3rd下可以生成各种库的测试代码
 
 ## 脚本引擎
-
-### lua引擎
-基于lua5.3
-
-### javascript引擎
 基于quickjs
 
 ## 协议栈
