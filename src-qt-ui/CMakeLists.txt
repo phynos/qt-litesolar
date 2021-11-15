@@ -3,7 +3,7 @@ project(LiteSolar)
 SET(CMAKE_CXX_STANDARD 14)
 
 # QT安装路径
-set(CMAKE_PREFIX_PATH $ENV{QT_DIR})
+set(CMAKE_PREFIX_PATH $ENV{Qt5_DIR})
 # Qt特有的编译器需要打开，默认是关闭的
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
@@ -13,10 +13,12 @@ set(CMAKE_AUTOUIC ON)
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 set(QT Core Gui Widgets Sql Xml)
 
+MESSAGE("Qt5_DIR:"$ENV{Qt5_DIR})
 FIND_PACKAGE(Qt5 COMPONENTS ${QT} REQUIRED)
 
 # 源码
 set(LiteSolar_SOURCES 
+    QtJsRuntime.cpp
     main.cpp
     mainwindow.cpp
     device/formdevice.cpp
@@ -33,6 +35,7 @@ set(LiteSolar_SOURCES
     )
 # 头文件
 set(LiteSolar_HEADERS 
+    QtJsRuntime.h
     mainwindow.h
     device/formdevice.h
     tv/dialogtv.h
@@ -67,7 +70,8 @@ set(LiteSolar_RESOURCES
     logo.rc
     )
 
-include_directories("${CMAKE_SOURCE_DIR}/src/jsruntime/")
+    include_directories("${CMAKE_SOURCE_DIR}/lib/")
+    include_directories("${CMAKE_SOURCE_DIR}/src/jsruntime/")
 
 if(WIN32) 
     # 这里如果不加WIN32，会导致编译的可执行文件运行时候会同时弹出一个命令行终端

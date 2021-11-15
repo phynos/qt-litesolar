@@ -50,7 +50,7 @@ static int eval_buf(JSContext *ctx, const void *buf, int buf_len,
     return ret;
 }
 
-static int eval_file(JSContext *ctx, const char *filename, int module)
+int eval_file(JSContext *ctx, const char *filename, int module)
 {
     uint8_t *buf;
     int ret, eval_flags;
@@ -90,14 +90,18 @@ JSContext *createJsContext(JSRuntime *rt)
 {
     JSContext *ctx;
     ctx = JS_NewContext(rt);
-    // 在这里可以添加各种cfunction和cmodule的扩展，提供给JS调用
-    js_std_add_helpers(ctx, 0, 0);
     js_init_module_std(ctx, "std");
     js_init_module_os(ctx, "os");
     // 自定义C模块
     js_init_module_test(ctx, "test");
     js_init_module_modbus_slave(ctx, "modbus");
     return ctx;
+}
+
+void initJsContextGlobal(JSContext *ctx)
+{
+    // 在这里可以添加各种cfunction和cmodule的扩展，提供给JS调用
+    js_std_add_helpers(ctx, 0, 0);
 }
 
 void releaseJsRuntime(JSRuntime *rt)
@@ -116,6 +120,7 @@ void test_quickjs()
     JSContext *ctx;
     rt = createJsRuntime();
     ctx = createJsContext(rt);
+    initJsContextGlobal(ctx);
 
     eval_file(ctx, "js/index.js", JS_EVAL_TYPE_MODULE);
     js_std_loop(ctx);

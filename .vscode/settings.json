@@ -9,6 +9,13 @@
         "random": "c",
         "cutils.h": "c",
         "js-cmodule.h": "c",
-        "js-runtime.h": "c"
+        "js-runtime.h": "c",
+        "iphlpapi.h": "c",
+        "*.tcc": "cpp",
+        "istream": "cpp",
+        "ostream": "cpp",
+        "typeinfo": "cpp",
+        "new": "cpp",
+        "quickjs-libc.h": "c"
     }
 }

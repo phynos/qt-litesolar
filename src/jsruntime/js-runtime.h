@@ -15,9 +15,13 @@ JSRuntime *createJsRuntime();
 
 JSContext *createJsContext(JSRuntime *rt);
 
+void initJsContextGlobal(JSContext *ctx);
+
 void releaseJsRuntime(JSRuntime *rt);
 
 void releaseJsContext(JSContext *ctx);
+
+int eval_file(JSContext *ctx, const char *filename, int module);
 
 void test_quickjs();
 

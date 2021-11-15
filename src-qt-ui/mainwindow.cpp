@@ -33,8 +33,6 @@ MainWindow::MainWindow(QWidget *parent) :
     QTreeWidgetTest();
     //QMessageBox::information(this,tr("asdfadsf"),tr("adsfasdf"),QMessageBox::Yes | QMessageBox::No, QMessageBox::Yes);
 
-    setCentralWidget(ui->dockWidgetMain);
-
     //允许嵌套dock
     //setDockNestingEnabled(true);
     //记录所有的dock指针
@@ -44,6 +42,14 @@ MainWindow::MainWindow(QWidget *parent) :
 
     NotifyManager *manager = new NotifyManager(this);
     manager->notify("新消息", "新消息新消息新消息新消息", "://img/message.png", "http://www.github.com");
+
+    qtJsRuntime = new QtJsRuntime();
+    qtJsRuntime->startThread();
+    //
+    connect(qtJsRuntime, &QtJsRuntime::sendMsgToMain, this, &MainWindow::receiveMsgFromThread);
+    //
+    connect(this, &MainWindow::sendMsgToJsThread, qtJsRuntime, &QtJsRuntime::runJsOnce);
+
 }
 
 void MainWindow::QTreeWidgetTest()
@@ -153,8 +159,23 @@ void MainWindow::on_action4_2_triggered()
 }
 
 void MainWindow::on_actionSetting_triggered()
-{
+{   
     DialogSetting dialog(this);
     dialog.setModal(true);
     dialog.exec();
+}
+
+void MainWindow::on_action_triggered()
+{
+    QString LogInfo;
+    LogInfo.sprintf("主线程：%p", QThread::currentThread());
+    ui->listWidget->addItem(LogInfo);
+    emit sendMsgToJsThread();
+}
+
+//接收线程函数
+void MainWindow::receiveMsgFromThread(QString msg)
+{
+    qDebug() << msg;
+    ui->listWidget->addItem(msg);
 }
