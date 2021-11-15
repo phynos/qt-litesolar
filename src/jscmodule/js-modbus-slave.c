@@ -42,7 +42,7 @@ static JSValue js_modbus_connect(JSContext *ctx, JSValueConst this_val, int argc
     if (modbus_connect(mb) == -1)
     {
         modbus_free(mb);
-        return JS_EXCEPTION;
+        return JS_NewBool(ctx, JS_FALSE);
     }
     // 返回连接结果
     return JS_NewBool(ctx, JS_TRUE);
