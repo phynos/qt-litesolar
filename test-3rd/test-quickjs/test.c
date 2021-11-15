@@ -4,6 +4,8 @@
 #include "quickjs/quickjs.h"
 #include "quickjs/cutils.h"
 
+#include "js-cmodule.h"
+
 static int eval_buf(JSContext *ctx, const void *buf, int buf_len,
                     const char *filename, int eval_flags);
 static int eval_file(JSContext *ctx, const char *filename, int module);
@@ -20,7 +22,9 @@ int main(int argc, char **argv)
     js_std_add_helpers(ctx, 0, 0);
     js_init_module_std(ctx, "std");
     js_init_module_os(ctx, "os");
-
+    // 自定义C模块
+    js_init_module_test(ctx, "test");
+    js_init_module_modbus_slave(ctx, "modbus");
 
     eval_file(ctx, "js/index.js", JS_EVAL_TYPE_MODULE);
   

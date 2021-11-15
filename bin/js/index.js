@@ -2,6 +2,9 @@
 
 import {testChar, testCharLength, testObject, testRPN} from './test.js';
 
+import {default as test} from "./lib/libtest.js";
+import {default as modbus} from "./lib/libmodbus.js";
+
 testChar();
 
 testCharLength();
@@ -9,3 +12,14 @@ testCharLength();
 //testObject();
 
 [1,2,3,4].map(a => a*a).forEach(b => console.log(b))
+
+console.log(test.plus(1,2));
+
+var slave = modbus.createTcp();
+for(var p in slave) {
+    var v = slave[p];
+    console.log("name=" + p + ", value=" + v);
+}
+var result = slave.connect();
+console.log(result);
+

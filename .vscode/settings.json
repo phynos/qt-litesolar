@@ -3,6 +3,9 @@
         "qwidget": "cpp",
         "quickjs.h": "c",
         "string.h": "c",
-        "windows.h": "c"
+        "windows.h": "c",
+        "modbus.h": "c",
+        "js-modbus-slave.h": "c",
+        "random": "c"
     }
 }
