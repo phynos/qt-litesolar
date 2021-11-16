@@ -13,7 +13,7 @@
 ## 脚本引擎
 基于quickjs
 
-![测试涂](doc/qtjsruntime.png)
+![测试图](doc/qtjsruntime.png)
 
 ``` js
 //modbus测试
