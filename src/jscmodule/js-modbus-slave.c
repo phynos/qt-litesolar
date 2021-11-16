@@ -11,9 +11,10 @@
  * 
  */
 
-#include "quickjs/quickjs.h"
-#include "quickjs/cutils.h"
+#include "js-cmodule.h"
 #include "libmodbus/modbus.h"
+
+
 
 static JSClassID _js_modbus_class_id;
 

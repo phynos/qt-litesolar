@@ -80,6 +80,7 @@ set(LiteSolar_RESOURCES
     )
 
     include_directories("${CMAKE_SOURCE_DIR}/lib/")
+    include_directories("${CMAKE_SOURCE_DIR}/src/jscmodule/")
     include_directories("${CMAKE_SOURCE_DIR}/src/jsruntime/")
 
 if(WIN32) 

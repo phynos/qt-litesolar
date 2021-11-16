@@ -11,8 +11,7 @@
  * 
  */
 
-#include "quickjs/quickjs.h"
-#include "quickjs/cutils.h"
+#include "js-cmodule.h"
 
 static JSValue plusNumbers(JSContext *ctx, JSValueConst this_val, int argc, JSValueConst *argv)
 {

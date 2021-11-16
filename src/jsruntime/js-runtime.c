@@ -13,9 +13,9 @@
 
 #include <string.h>
 #include "js-runtime.h"
-#include "js-cmodule.h"
 
-static int eval_buf(JSContext *ctx, const void *buf, int buf_len,
+
+int eval_buf(JSContext *ctx, const void *buf, int buf_len,
                     const char *filename, int eval_flags)
 {
     JSValue val;

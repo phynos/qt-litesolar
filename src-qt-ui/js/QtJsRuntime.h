@@ -1,11 +1,12 @@
-#ifndef QTJSBIND_H
-#define QTJSBIND_H
+#ifndef QTJSRUNTIME_H
+#define QTJSRUNTIME_H
 
 extern "C"
 {
 #include "js-runtime.h"
 }
 #include <QThread>
+#include <QTimer>
 
 class QtJsRuntime : public QObject
 {
@@ -13,14 +14,19 @@ class QtJsRuntime : public QObject
 private:
     /* data */
     JSRuntime *rt;
-    QThread *thread;
+    QThread *thread;//js实际运行的线程
+    QTimer *timer;//预留，作为settimeout的实现
 
-    void printThreadInfo();
+    JSRuntime *getJsRuntime();
+    void printThreadInfo(QString);
+    void mountJsGlobal(JSContext *ctx);
+    void mountJsCModule(JSContext *ctx);
     static JSValue jsPrintCallback(JSContext *ctx, JSValueConst this_val,
-                         int argc, JSValueConst *argv);
+                         int argc, JSValueConst *argv);                       
 public slots:
     void runJsExpr(QString);
     void runJsIndexFile();
+    void timeoutSlot();
 
 public:
     QtJsRuntime(/* args */);
