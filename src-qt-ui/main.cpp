@@ -1,4 +1,5 @@
 #include "mainwindow.h"
+#include "js/JsTestWindow.h"
 #include <QApplication>
 
 #include <QTextCodec>
@@ -17,8 +18,11 @@ int main(int argc, char *argv[])
     QApplication::setStyle("WindowsXP");
 
     QApplication a(argc, argv);
-    MainWindow w;
-    w.show();
+//    MainWindow w;
+//    w.show();
+
+    JsTestWindow j;
+    j.show();
 
     return a.exec();
 }

@@ -1,6 +1,6 @@
 
 import Persion from "./persion.js";
-import {CalContext} from "./lib-rpn.js";
+import {CalContext} from "./rpn.js";
 
 //中文编码测试
 function testChar(){

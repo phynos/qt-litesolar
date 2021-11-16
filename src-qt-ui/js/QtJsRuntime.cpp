@@ -8,32 +8,53 @@
  * 这里存储一个全局，用来从C回调中找到对应的对象
  * 
  */
-QtJsRuntime *QtJsRuntime::JsBindPr = nullptr;
+QtJsRuntime *QtJsRuntime::gInstance = nullptr;
 
 QtJsRuntime::QtJsRuntime(/* args */)
 {
-    JsBindPr = this;
+    gInstance = this;
     //初始化一个线程（内含消息循环），作为js的运行线程
     thread = new QThread();
-    this->moveToThread(thread);
+    this->moveToThread(thread);    
 }
 
 QtJsRuntime::~QtJsRuntime()
 {
+    releaseJsRuntime(rt);
 }
 
 void QtJsRuntime::startThread() {    
-    thread->start();    
+    thread->start();
 }
 
-void QtJsRuntime::runJsOnce()
-{
+void QtJsRuntime::printThreadInfo() {
     QString LogInfo;
     LogInfo.sprintf("JS执行线程：%p", QThread::currentThread());
     emit sendMsgToMain(LogInfo);
-    JSRuntime *rt;
+}
+
+void QtJsRuntime::runJsExpr(QString) {
     JSContext *ctx;
-    rt = createJsRuntime();
+    printThreadInfo();
+    if(rt == NULL) {
+        //初始化——必须和ctx在同一个线程创建
+        rt = createJsRuntime();
+    }
+    ctx = createJsContext(rt);
+
+
+
+    releaseJsContext(ctx);
+}
+
+void QtJsRuntime::runJsIndexFile()
+{
+    JSContext *ctx;
+    printThreadInfo();
+    if(rt == NULL) {
+        //初始化——必须和ctx在同一个线程创建
+        rt = createJsRuntime();
+    }
     ctx = createJsContext(rt);
 
     JSValue global_obj, console;
@@ -41,20 +62,19 @@ void QtJsRuntime::runJsOnce()
 
     console = JS_NewObject(ctx);
     JS_SetPropertyStr(ctx, console, "log",
-                      JS_NewCFunction(ctx, QtJsRuntime::print, "log", 1));
+                      JS_NewCFunction(ctx, QtJsRuntime::jsPrintCallback, "log", 1));
     JS_SetPropertyStr(ctx, global_obj, "console", console);
     JS_SetPropertyStr(ctx, global_obj, "print",
-                      JS_NewCFunction(ctx, QtJsRuntime::print, "print", 1));
+                      JS_NewCFunction(ctx, QtJsRuntime::jsPrintCallback, "print", 1));
     JS_FreeValue(ctx, global_obj);
 
     eval_file(ctx, "js/index.js", JS_EVAL_TYPE_MODULE);
     js_std_loop(ctx);
 
     releaseJsContext(ctx);
-    releaseJsRuntime(rt);
 }
 
-JSValue QtJsRuntime::print(JSContext *ctx, JSValueConst this_val,
+JSValue QtJsRuntime::jsPrintCallback(JSContext *ctx, JSValueConst this_val,
                         int argc, JSValueConst *argv)
 {
     int i;
@@ -69,7 +89,7 @@ JSValue QtJsRuntime::print(JSContext *ctx, JSValueConst this_val,
         if (!str)
             return JS_EXCEPTION;
         QString str2 = QString::fromUtf8(str, len);
-        emit JsBindPr->sendMsgToMain(str2);
+        emit gInstance->sendMsgToMain(str2);
 
         JS_FreeCString(ctx, str);
     }

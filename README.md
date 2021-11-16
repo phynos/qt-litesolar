@@ -13,6 +13,8 @@
 ## 脚本引擎
 基于quickjs
 
+![测试涂](doc/qtjsruntime.png)
+
 ``` js
 //modbus测试
 var slave = modbus.createTcp("127.0.0.1", 502);

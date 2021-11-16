@@ -16,6 +16,7 @@
         "ostream": "cpp",
         "typeinfo": "cpp",
         "new": "cpp",
-        "quickjs-libc.h": "c"
+        "quickjs-libc.h": "c",
+        "qmouseevent": "cpp"
     }
 }

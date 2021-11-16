@@ -2,9 +2,8 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include <qtreewidget.h>
+#include <QFileSystemModel>
 
-#include "QtJsRuntime.h"
 
 namespace Ui {
 class MainWindow;
@@ -26,8 +25,6 @@ public:
     void showDock(const QList<int>& index = QList<int>());
 
 private slots:
-    void receiveMsgFromThread(QString);
-
     void on_actionExit_triggered();
 
     void on_actionAbout_triggered();
@@ -41,14 +38,8 @@ private slots:
 private:
     Ui::MainWindow *ui;
 
-    QList<QDockWidget*> m_docks;///< 记录所有dockWidget的指针
-
-    QtJsRuntime *qtJsRuntime;
-
     void setupView();
     void setupStateBar();
-signals:
-    void sendMsgToJsThread();
 };
 
 #endif // MAINWINDOW_H

@@ -18,9 +18,13 @@ FIND_PACKAGE(Qt5 COMPONENTS ${QT} REQUIRED)
 
 # 源码
 set(LiteSolar_SOURCES 
-    QtJsRuntime.cpp
+    
     main.cpp
-    mainwindow.cpp
+    MainWindow.cpp
+
+    js/QtJsRuntime.cpp
+    js/JsTestWindow.cpp
+    
     device/formdevice.cpp
     tv/dialogtv.cpp
     notify/notify.cpp
@@ -35,8 +39,12 @@ set(LiteSolar_SOURCES
     )
 # 头文件
 set(LiteSolar_HEADERS 
-    QtJsRuntime.h
-    mainwindow.h
+    
+    MainWindow.h
+    
+    js/QtJsRuntime.h
+    js/JsTestWindow.h
+
     device/formdevice.h
     tv/dialogtv.h
     notify/notify.h
@@ -53,7 +61,8 @@ set(LiteSolar_HEADERS
     )
 # UI文件配置
 set(LiteSolar_FORMS 
-    mainwindow.ui
+    MainWindow.ui
+    js/JsTestWindow.ui
     device/formdevice.ui
     tv/dialogtv.ui
     

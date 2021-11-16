@@ -12,19 +12,23 @@ class QtJsRuntime : public QObject
     Q_OBJECT
 private:
     /* data */
+    JSRuntime *rt;
     QThread *thread;
-    static JSValue print(JSContext *ctx, JSValueConst this_val,
+
+    void printThreadInfo();
+    static JSValue jsPrintCallback(JSContext *ctx, JSValueConst this_val,
                          int argc, JSValueConst *argv);
 public slots:
-    void runJsOnce();
+    void runJsExpr(QString);
+    void runJsIndexFile();
 
 public:
-    QtJsRuntime(/* args */);    
+    QtJsRuntime(/* args */);
+    static QtJsRuntime *gInstance;
     /**
      * 启动线程，作为JS的运行线程
      */
     void startThread();
-    static QtJsRuntime *JsBindPr;
     ~QtJsRuntime();
 
 signals:

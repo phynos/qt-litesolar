@@ -1,6 +1,6 @@
 
 
-import {testChar, testCharLength, testObject, testRPN} from './test.js';
+import {testChar, testCharLength, testObject, testRPN} from './lib/test.js';
 
 import { setTimeout } from "os";
 
