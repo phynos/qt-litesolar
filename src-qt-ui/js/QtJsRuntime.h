@@ -22,8 +22,9 @@ private:
     void mountJsGlobal(JSContext *ctx);
     void mountJsCModule(JSContext *ctx);
     static JSValue jsPrintCallback(JSContext *ctx, JSValueConst this_val,
-                         int argc, JSValueConst *argv);                       
-public slots:
+                         int argc, JSValueConst *argv); 
+
+public Q_SLOTS:
     void runJsExpr(QString);
     void runJsIndexFile();
     void timeoutSlot();
@@ -35,6 +36,8 @@ public:
      * 启动线程，作为JS的运行线程
      */
     void startThread();
+
+    bool isThreadRunning();
     ~QtJsRuntime();
 
 signals:

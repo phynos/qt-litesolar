@@ -3,6 +3,7 @@
 #include "QtJsRuntime.h"
 
 #include <QDebug>
+#include <QtConcurrent/QtConcurrent>
 
 /**
  * 这里存储一个全局，用来从C回调中找到对应的对象
@@ -13,10 +14,12 @@ QtJsRuntime *QtJsRuntime::gInstance = nullptr;
 QtJsRuntime::QtJsRuntime(/* args */)
 {
     gInstance = this;
+    rt = NULL;
     //初始化一个线程（内含消息循环），作为js的运行线程
     thread = new QThread();
+    thread->setObjectName("JsThread");
     this->moveToThread(thread);
-    //
+    //预留一个定时器
     timer = new QTimer();
     timer->setInterval(3000);
     timer->moveToThread(thread);
@@ -43,13 +46,19 @@ JSRuntime *QtJsRuntime::getJsRuntime()
 void QtJsRuntime::startThread()
 {
     thread->start();
+    //初始化
+}
+
+bool QtJsRuntime::isThreadRunning() {    
+    return thread->isRunning();
 }
 
 void QtJsRuntime::printThreadInfo(QString str)
 {
-    QString threadId;
-    threadId.sprintf("%p", QThread::currentThread());
-    emit sendMsgToMain(str + ":" + threadId);
+    QString LogInfo;
+    LogInfo.sprintf("%p", QThread::currentThread());
+    qDebug() <<  str << " thread=" << LogInfo << ", threadObjectName" << QThread::currentThread()->objectName();
+    emit sendMsgToMain(str + ":" + LogInfo + ":" + QThread::currentThread()->objectName());
 }
 
 void QtJsRuntime::runJsExpr(QString)
@@ -62,10 +71,12 @@ void QtJsRuntime::runJsExpr(QString)
 }
 
 void QtJsRuntime::runJsIndexFile()
-{
+{    
     JSContext *ctx;
-    printThreadInfo("JS执行线程");
-    ctx = createJsContext(getJsRuntime());
+    printThreadInfo("js thread");
+    //初始化——必须和ctx在同一个线程创建
+    getJsRuntime();
+    ctx = JS_NewContext(rt);
 
     mountJsGlobal(ctx);
     mountJsCModule(ctx);

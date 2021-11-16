@@ -38,7 +38,8 @@ JsTestWindow::~JsTestWindow()
 void JsTestWindow::on_pushButton_clicked()
 {
     QString LogInfo;
-    LogInfo.sprintf("主线程：%p", QThread::currentThread());
+    LogInfo.sprintf("ui thread:%p", QThread::currentThread());
+    qDebug() << LogInfo;
     ui->listWidget->addItem(LogInfo);
     emit runJsIndexFile();
 }
@@ -65,7 +66,7 @@ void JsTestWindow::showJsFile(const QModelIndex &index)
 //接收线程函数
 void JsTestWindow::receiveMsgFromThread(QString msg)
 {
-    qDebug() << msg;
+    qDebug() << "主线程收到消息：" << msg;
     ui->listWidget->addItem(msg);
     ui->listWidget->scrollToBottom();
 }
