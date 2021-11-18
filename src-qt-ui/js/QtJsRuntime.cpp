@@ -49,7 +49,8 @@ void QtJsRuntime::startThread()
     //初始化
 }
 
-bool QtJsRuntime::isThreadRunning() {    
+bool QtJsRuntime::isThreadRunning()
+{
     return thread->isRunning();
 }
 
@@ -57,7 +58,7 @@ void QtJsRuntime::printThreadInfo(QString str)
 {
     QString LogInfo;
     LogInfo.sprintf("%p", QThread::currentThread());
-    qDebug() <<  str << " thread=" << LogInfo << ", threadObjectName" << QThread::currentThread()->objectName();
+    qDebug() << str << " thread=" << LogInfo << ", threadObjectName" << QThread::currentThread()->objectName();
     emit sendMsgToMain(str + ":" + LogInfo + ":" + QThread::currentThread()->objectName());
 }
 
@@ -71,7 +72,7 @@ void QtJsRuntime::runJsExpr(QString)
 }
 
 void QtJsRuntime::runJsIndexFile()
-{    
+{
     JSContext *ctx;
     printThreadInfo("js thread");
     //初始化——必须和ctx在同一个线程创建
@@ -79,21 +80,56 @@ void QtJsRuntime::runJsIndexFile()
     ctx = JS_NewContext(rt);
 
     mountJsGlobal(ctx);
+    mountJsSetTimeout(ctx);
     mountJsCModule(ctx);
 
     eval_file(ctx, "js/index.js", JS_EVAL_TYPE_MODULE);
 
-    //todo 暂时用std的循环处理用户回调
-    js_std_loop(ctx);
+    //因为QT线程有消息循环，这里不用再循环等待异步任务了
 
     releaseJsContext(ctx);
 }
 
-void QtJsRuntime::timeoutSlot() {
-    printThreadInfo("JS定时器执行");
+void QtJsRuntime::timeoutSlot()
+{
+    emit sendMsgToMain("JS定时器触发了");
+    timer->stop();
 }
 
-JSValue QtJsRuntime::jsPrintCallback(JSContext *ctx, JSValueConst this_val,
+void QtJsRuntime::mountJsSetTimeout(JSContext *ctx)
+{
+    JSValue global_obj, console;
+    global_obj = JS_GetGlobalObject(ctx);
+    JS_SetPropertyStr(ctx, global_obj, "setTimeout",
+                      JS_NewCFunction(ctx, QtJsRuntime::jsCallSetTimeout, "setTimeout", 2));
+    JS_FreeValue(ctx, global_obj);
+}
+void QtJsRuntime::jsCleanTimeout()
+{
+}
+
+JSValue QtJsRuntime::jsCallSetTimeout(JSContext *ctx, JSValueConst this_val,
+                                       int argc, JSValueConst *argv)
+{
+    emit gInstance->sendMsgToMain("JS调用了SetTimeout");
+
+    int64_t delay;
+    JSValueConst func;
+
+    func = argv[0];
+    if (!JS_IsFunction(ctx, func))
+        return JS_ThrowTypeError(ctx, "not a function");
+    if (JS_ToInt64(ctx, &delay, argv[1]))
+        return JS_EXCEPTION;
+
+
+    //这里启动定时器
+    gInstance->timer->start(delay);
+
+    return JS_UNDEFINED;
+}
+
+JSValue QtJsRuntime::jsCallPrint(JSContext *ctx, JSValueConst this_val,
                                      int argc, JSValueConst *argv)
 {
     int i;
@@ -122,18 +158,15 @@ void QtJsRuntime::mountJsGlobal(JSContext *ctx)
 
     console = JS_NewObject(ctx);
     JS_SetPropertyStr(ctx, console, "log",
-                      JS_NewCFunction(ctx, QtJsRuntime::jsPrintCallback, "log", 1));
+                      JS_NewCFunction(ctx, QtJsRuntime::jsCallPrint, "log", 1));
     JS_SetPropertyStr(ctx, global_obj, "console", console);
     JS_SetPropertyStr(ctx, global_obj, "print",
-                      JS_NewCFunction(ctx, QtJsRuntime::jsPrintCallback, "print", 1));
+                      JS_NewCFunction(ctx, QtJsRuntime::jsCallPrint, "print", 1));
     JS_FreeValue(ctx, global_obj);
 }
 
 void QtJsRuntime::mountJsCModule(JSContext *ctx)
 {
-    //这2个模块要替换
-    js_init_module_std(ctx, "std");
-    js_init_module_os(ctx, "os");
     // 自定义C模块
     js_init_module_test(ctx, "test");
     js_init_module_modbus_slave(ctx, "modbus");

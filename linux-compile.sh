@@ -1,5 +1,5 @@
-mkdir -p dist
-cd dist
+mkdir -p build
+cd build
 cmake ../
 make
 

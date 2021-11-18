@@ -42,10 +42,10 @@ static JSValue js_modbus_connect(JSContext *ctx, JSValueConst this_val, int argc
     //建立连接
     if (modbus_connect(mb) == -1)
     {
-        return JS_NewBool(ctx, JS_FALSE);
+        return JS_NewBool(ctx, 0);
     }
     // 返回连接结果
-    return JS_NewBool(ctx, JS_TRUE);
+    return JS_NewBool(ctx, 1);
 }
 
 static JSValue js_modbus_read(JSContext *ctx, JSValueConst this_val, int argc, JSValueConst *argv)
