@@ -17,6 +17,9 @@
         "typeinfo": "cpp",
         "new": "cpp",
         "quickjs-libc.h": "c",
-        "qmouseevent": "cpp"
+        "qmouseevent": "cpp",
+        "fcntl.h": "c",
+        "time.h": "c",
+        "jsruntime.h": "c"
     }
 }

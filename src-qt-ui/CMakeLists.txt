@@ -80,8 +80,6 @@ set(LiteSolar_RESOURCES
     )
 
     include_directories("${CMAKE_SOURCE_DIR}/lib/")
-    include_directories("${CMAKE_SOURCE_DIR}/src/jscmodule/")
-    include_directories("${CMAKE_SOURCE_DIR}/src/jsruntime/")
 
 if(WIN32) 
     # 这里如果不加WIN32，会导致编译的可执行文件运行时候会同时弹出一个命令行终端

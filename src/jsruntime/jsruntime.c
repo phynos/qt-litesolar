@@ -12,7 +12,7 @@
  */
 
 #include <string.h>
-#include "js-runtime.h"
+#include "jsruntime.h"
 
 
 int eval_buf(JSContext *ctx, const void *buf, int buf_len,

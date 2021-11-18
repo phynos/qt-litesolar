@@ -3,7 +3,7 @@
 
 extern "C"
 {
-#include "js-runtime.h"
+#include "jsruntime.h"
 }
 #include <QThread>
 #include <QTimer>

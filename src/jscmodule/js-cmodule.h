@@ -2,8 +2,8 @@
 #define JSCMODULE_H
 
 
-#include "quickjs/quickjs.h"
-#include "quickjs/cutils.h"
+#include "quickjs.h"
+#include "cutils.h"
 
 JSModuleDef *js_init_module_test(JSContext *ctx, const char *module_name);
 

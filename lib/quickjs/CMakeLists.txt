@@ -1,5 +1,5 @@
-
-project(quickjs)
+cmake_minimum_required(VERSION 3.16.0)
+project(quickjs C)
 
 # #define OPTIMIZE 1 是否优化
 # #define SHORT_OPCODES 1 是否生成短小的操作码
@@ -56,6 +56,7 @@ add_compile_options(
          -DCONFIG_LTO)
 
 add_library(quickjs SHARED quickjs.c libregexp.c libunicode.c cutils.c quickjs-libc.c libbf.c)
+target_include_directories(quickjs PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 
 add_executable(qjsc qjsc.c)
 target_link_libraries(qjsc quickjs m)
@@ -80,7 +81,7 @@ target_link_libraries(qjs quickjs m)
 if(WIN32) 
     MESSAGE("QUICKJS WIN32...")
 else()
-    TARGET_LINK_LIBRARIES(qjs
+    target_link_libraries(qjs
     dl
     )
 endif()

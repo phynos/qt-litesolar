@@ -4,9 +4,9 @@
 
 #include "js-cmodule.h"
 
-#include "quickjs/quickjs-libc.h"
-#include "quickjs/quickjs.h"
-#include "quickjs/cutils.h"
+#include "quickjs-libc.h"
+#include "quickjs.h"
+#include "cutils.h"
 
 
 typedef struct qjs_engine {

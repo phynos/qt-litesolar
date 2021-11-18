@@ -12,7 +12,7 @@
  */
 
 #include "js-cmodule.h"
-#include "libmodbus/modbus.h"
+#include "modbus.h"
 
 
 

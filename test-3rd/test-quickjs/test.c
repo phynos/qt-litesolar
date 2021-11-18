@@ -1,4 +1,4 @@
-#include "js-runtime.h"
+#include "jsruntime.h"
 #include <pthread.h>
 
 void *thread(void *arg)

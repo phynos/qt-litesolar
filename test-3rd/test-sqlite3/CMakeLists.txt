@@ -1,13 +1,8 @@
 
 
-include_directories("${CMAKE_SOURCE_DIR}/lib/sqlite-3.24.0/")
-
 # 指定生成目标
 add_executable(TestSqlite3 test-sqlite3.c)
-
-TARGET_LINK_LIBRARIES(TestSqlite3 
-    sqlite3
-)
+target_link_libraries(TestSqlite3 sqlite3)
 
 if(WIN32)
     # C的解决办法
