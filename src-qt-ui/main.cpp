@@ -10,8 +10,8 @@
 #include "main/modern/uidemo08.h"
 #include "main/modern/appinit.h"
 
-
-void start_classic() {
+void start_classic()
+{
     MainWindow w;
     w.show();
 }
@@ -20,10 +20,12 @@ int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
 
-
+    QTextCodec *codec = QTextCodec::codecForName("utf-8");
+    QTextCodec::setCodecForLocale(codec);
     //加载样式表
     QFile file(":/qss/psblack.css");
-    if (file.open(QFile::ReadOnly)) {
+    if (file.open(QFile::ReadOnly))
+    {
         QString qss = QLatin1String(file.readAll());
         QString paletteColor = qss.mid(20, 7);
         qApp->setPalette(QPalette(QColor(paletteColor)));

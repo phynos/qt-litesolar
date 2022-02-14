@@ -4,9 +4,8 @@
 #include "ui_uidemo08.h"
 #include "../../util/iconhelper.h"
 
-UIDemo08::UIDemo08(QWidget *parent) :
-    QWidget(parent),
-    ui(new Ui::UIDemo08)
+UIDemo08::UIDemo08(QWidget *parent) : QWidget(parent),
+                                      ui(new Ui::UIDemo08)
 {
     ui->setupUi(this);
     this->initForm();
@@ -20,7 +19,7 @@ UIDemo08::~UIDemo08()
 }
 
 void UIDemo08::initForm()
-{   
+{
     this->setProperty("form", true);
     this->setProperty("canMove", true);
     this->setWindowFlags(Qt::FramelessWindowHint | Qt::WindowSystemMenuHint | Qt::WindowMinMaxButtonsHint);
@@ -30,7 +29,7 @@ void UIDemo08::initForm()
     IconHelper::Instance()->setIcon(ui->btnMenu_Max, QChar(0xf067));
     IconHelper::Instance()->setIcon(ui->btnMenu_Close, QChar(0xf00d));
 
-    //ui->widgetMenu->setVisible(false);
+    // ui->widgetMenu->setVisible(false);
     ui->widgetTitle->setProperty("form", "title");
     ui->widgetTop->setProperty("nav", "top");
     ui->labTitle->setText("光伏监控系统");
@@ -44,7 +43,8 @@ void UIDemo08::initForm()
 
     //设置顶部导航按钮
     QList<QToolButton *> tbtns = ui->widgetTop->findChildren<QToolButton *>();
-    foreach (QToolButton *btn, tbtns) {
+    foreach (QToolButton *btn, tbtns)
+    {
         btn->setIconSize(icoSize);
         btn->setMinimumWidth(icoWidth);
         btn->setCheckable(true);
@@ -61,18 +61,17 @@ void UIDemo08::initForm()
 
 void UIDemo08::exitApp()
 {
-    switch(QMessageBox::question(this,"Question",tr("你确认要退出系统吗？"),
-            QMessageBox::Ok|QMessageBox::Cancel,QMessageBox::Ok))
-        {
-        case QMessageBox::Ok:
-           exit(0);
-            break;
-        case QMessageBox::Cancel:
-            break;
-        default:
-            break;
-        }
-
+    switch (QMessageBox::question(this, "Question", tr("你确认要退出系统吗？"),
+                                  QMessageBox::Ok | QMessageBox::Cancel, QMessageBox::Ok))
+    {
+    case QMessageBox::Ok:
+        exit(0);
+        break;
+    case QMessageBox::Cancel:
+        break;
+    default:
+        break;
+    }
 }
 
 void UIDemo08::buttonClick()
@@ -81,23 +80,36 @@ void UIDemo08::buttonClick()
     QString name = b->text();
 
     QList<QToolButton *> tbtns = ui->widgetTop->findChildren<QToolButton *>();
-    foreach (QToolButton *btn, tbtns) {
-        if (btn == b) {
+    foreach (QToolButton *btn, tbtns)
+    {
+        if (btn == b)
+        {
             btn->setChecked(true);
-        } else {
+        }
+        else
+        {
             btn->setChecked(false);
         }
     }
 
-    if (name == "主界面") {
+    if (name == "主界面")
+    {
         ui->stackedWidget->setCurrentIndex(0);
-    } else if (name == "系统设置") {
+    }
+    else if (name == "系统设置")
+    {
         ui->stackedWidget->setCurrentIndex(1);
-    } else if (name == "警情查询") {
+    }
+    else if (name == "警情查询")
+    {
         ui->stackedWidget->setCurrentIndex(2);
-    } else if (name == "调试帮助") {
+    }
+    else if (name == "调试帮助")
+    {
         ui->stackedWidget->setCurrentIndex(3);
-    } else if (name == "用户退出") {
+    }
+    else if (name == "用户退出")
+    {
         exitApp();
     }
 }
@@ -108,7 +120,8 @@ void UIDemo08::initLeftMain()
     btnsMain << ui->tbtnMain1 << ui->tbtnMain2 << ui->tbtnMain3;
 
     int count = btnsMain.count();
-    for (int i = 0; i < count; i++) {
+    for (int i = 0; i < count; i++)
+    {
         btnsMain.at(i)->setCheckable(true);
         btnsMain.at(i)->setToolButtonStyle(Qt::ToolButtonTextUnderIcon);
         connect(btnsMain.at(i), SIGNAL(clicked(bool)), this, SLOT(leftMainClick()));
@@ -125,7 +138,8 @@ void UIDemo08::initLeftConfig()
     btnsConfig << ui->tbtnConfig1 << ui->tbtnConfig2 << ui->tbtnConfig3 << ui->tbtnConfig4 << ui->tbtnConfig5 << ui->tbtnConfig6;
 
     int count = btnsConfig.count();
-    for (int i = 0; i < count; i++) {
+    for (int i = 0; i < count; i++)
+    {
         btnsConfig.at(i)->setCheckable(true);
         btnsConfig.at(i)->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
         connect(btnsConfig.at(i), SIGNAL(clicked(bool)), this, SLOT(leftConfigClick()));
@@ -142,11 +156,15 @@ void UIDemo08::leftMainClick()
     QString name = b->text();
 
     int count = btnsMain.count();
-    for (int i = 0; i < count; i++) {
-        if (btnsMain.at(i) == b) {
+    for (int i = 0; i < count; i++)
+    {
+        if (btnsMain.at(i) == b)
+        {
             btnsMain.at(i)->setChecked(true);
             btnsMain.at(i)->setIcon(QIcon(IconHelper::Instance()->getPixmap(btnsMain.at(i), false)));
-        } else {
+        }
+        else
+        {
             btnsMain.at(i)->setChecked(false);
             btnsMain.at(i)->setIcon(QIcon(IconHelper::Instance()->getPixmap(btnsMain.at(i), true)));
         }
@@ -161,11 +179,15 @@ void UIDemo08::leftConfigClick()
     QString name = b->text();
 
     int count = btnsConfig.count();
-    for (int i = 0; i < count; i++) {
-        if (btnsConfig.at(i) == b) {
+    for (int i = 0; i < count; i++)
+    {
+        if (btnsConfig.at(i) == b)
+        {
             btnsConfig.at(i)->setChecked(true);
             btnsConfig.at(i)->setIcon(QIcon(IconHelper::Instance()->getPixmap(btnsConfig.at(i), false)));
-        } else {
+        }
+        else
+        {
             btnsConfig.at(i)->setChecked(false);
             btnsConfig.at(i)->setIcon(QIcon(IconHelper::Instance()->getPixmap(btnsConfig.at(i), true)));
         }
@@ -184,9 +206,12 @@ void UIDemo08::on_btnMenu_Max_clicked()
     static bool max = false;
     static QRect location = this->geometry();
 
-    if (max) {
+    if (max)
+    {
         this->setGeometry(location);
-    } else {
+    }
+    else
+    {
         location = this->geometry();
         this->setGeometry(qApp->desktop()->availableGeometry());
     }
@@ -199,4 +224,3 @@ void UIDemo08::on_btnMenu_Close_clicked()
 {
     close();
 }
-
