@@ -1,0 +1,32 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"files.associations": {
+			"qwidget": "cpp",
+			"quickjs.h": "c",
+			"string.h": "c",
+			"windows.h": "c",
+			"modbus.h": "c",
+			"js-modbus-slave.h": "c",
+			"random": "c",
+			"cutils.h": "c",
+			"js-cmodule.h": "c",
+			"js-runtime.h": "c",
+			"iphlpapi.h": "c",
+			"*.tcc": "cpp",
+			"istream": "cpp",
+			"ostream": "cpp",
+			"typeinfo": "cpp",
+			"new": "cpp",
+			"quickjs-libc.h": "c",
+			"qmouseevent": "cpp",
+			"fcntl.h": "c",
+			"time.h": "c",
+			"jsruntime.h": "c"
+		}
+	}
+}

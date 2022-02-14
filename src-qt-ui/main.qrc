@@ -1,0 +1,15 @@
+<RCC>
+    <qresource prefix="/">
+        <file>static/xml/config.xml</file>
+        <file>static/json/test.json</file>
+        <file>static/image/fontawesome-webfont.ttf</file>
+        <file>static/image/main_about.png</file>
+        <file>static/image/main_company.png</file>
+        <file>static/image/main_config.png</file>
+        <file>static/image/main_data.png</file>
+        <file>static/image/main_exit.png</file>
+        <file>static/image/main_help.png</file>
+        <file>static/image/main_main.png</file>
+        <file>static/image/main_person.png</file>
+    </qresource>
+</RCC>

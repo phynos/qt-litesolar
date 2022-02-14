@@ -9,10 +9,10 @@
 #include <QMouseEvent>
 #include <QTextCodec>
 
-#include "menu/dialogsetting.h"
-#include "menu/dialogabout.h"
-#include "menu/dialogdevicedata.h"
-#include "notify/notifymanager.h"
+#include "../../menu/dialogsetting.h"
+#include "../../menu/dialogabout.h"
+#include "../../menu/dialogdevicedata.h"
+#include "../../notify/notifymanager.h"
 
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent),
                                           ui(new Ui::MainWindow)
@@ -22,7 +22,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent),
     setWindowState(Qt::WindowNoState);
     setMinimumSize(800, 600);
 
-    QFile file(":/qss/rc/css.qss");
+    QFile file(":/qss/classic.qss");
     file.open(QFile::ReadOnly);
     QByteArray bytes = file.readAll();
     QString styleSheet = bytes.data();
@@ -40,7 +40,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent),
 
 void MainWindow::QTreeWidgetTest()
 {
-
+int a;
 }
 
 void MainWindow::removeAllDock()
@@ -58,7 +58,7 @@ void MainWindow::setupView()
     //增加设备
     //删除设备
     //修改设备
-
+int b;
     //实时曲线
     //历史曲线
     //历史数据

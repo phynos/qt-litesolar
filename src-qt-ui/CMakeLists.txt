@@ -17,14 +17,13 @@ MESSAGE("Qt5_DIR:"$ENV{Qt5_DIR})
 FIND_PACKAGE(Qt5 COMPONENTS ${QT} REQUIRED)
 
 # 源码
-set(LiteSolar_SOURCES 
-    
+set(LiteSolar_SOURCES     
     main.cpp
-    MainWindow.cpp
 
-    js/QtJsRuntime.cpp
-    js/JsTestWindow.cpp
-    
+    main/classic/mainwindow.cpp
+    main/modern/uidemo08.cpp
+    main/modern/appinit.cpp
+
     device/formdevice.cpp
     tv/dialogtv.cpp
     notify/notify.cpp
@@ -36,14 +35,15 @@ set(LiteSolar_SOURCES
     menu/dialogdeviceevents.cpp
     menu/dialogdevicedata.cpp
     menu/dialogabout.cpp
+
+    util/iconhelper.cpp
     )
 # 头文件
 set(LiteSolar_HEADERS 
     
-    MainWindow.h
-    
-    js/QtJsRuntime.h
-    js/JsTestWindow.h
+    main/classic/mainwindow.h
+    main/modern/uidemo08.h
+    main/modern/appinit.h
 
     device/formdevice.h
     tv/dialogtv.h
@@ -58,11 +58,14 @@ set(LiteSolar_HEADERS
     menu/dialogdeviceevents.ui
     menu/dialogdevicedata.h
     menu/dialogabout.h
+
+    util/iconhelper.h
     )
 # UI文件配置
 set(LiteSolar_FORMS 
-    MainWindow.ui
-    js/JsTestWindow.ui
+    main/classic/mainwindow.ui
+    main/modern/uidemo08.ui
+
     device/formdevice.ui
     tv/dialogtv.ui
     
@@ -77,6 +80,8 @@ set(LiteSolar_FORMS
 set(LiteSolar_RESOURCES 
     solar.qrc
     logo.rc
+    main.qrc
+    qss.qrc
     )
 
     include_directories("${CMAKE_SOURCE_DIR}/lib/")
@@ -93,6 +98,5 @@ endif()
 target_link_libraries(${CMAKE_PROJECT_NAME} PRIVATE 
     Qt5::Core
     Qt5::Gui
-    Qt5::Widgets
-    JsRuntime
+    Qt5::Widgets    
 )
