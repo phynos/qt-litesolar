@@ -59,6 +59,22 @@ void UIDemo08::initForm()
     ui->page2->setStyleSheet(QString("QWidget[flag=\"left\"] QAbstractButton{min-height:%1px;max-height:%1px;}").arg(20));
 }
 
+void UIDemo08::exitApp()
+{
+    switch(QMessageBox::question(this,"Question",tr("你确认要退出系统吗？"),
+            QMessageBox::Ok|QMessageBox::Cancel,QMessageBox::Ok))
+        {
+        case QMessageBox::Ok:
+           exit(0);
+            break;
+        case QMessageBox::Cancel:
+            break;
+        default:
+            break;
+        }
+
+}
+
 void UIDemo08::buttonClick()
 {
     QToolButton *b = (QToolButton *)sender();
@@ -82,7 +98,7 @@ void UIDemo08::buttonClick()
     } else if (name == "调试帮助") {
         ui->stackedWidget->setCurrentIndex(3);
     } else if (name == "用户退出") {
-        exit(0);
+        exitApp();
     }
 }
 

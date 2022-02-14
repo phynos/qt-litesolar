@@ -26,6 +26,8 @@ private:
     QList<int> pixCharConfig;
     QList<QToolButton *> btnsConfig;
 
+    void exitApp();
+
 private slots:
     void initForm();
     void buttonClick();
