@@ -11,15 +11,14 @@
 #include "main/modern/appinit.h"
 
 
-void start_classic() {
-    MainWindow w;
-    w.show();
-}
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
 
+
+    // MainWindow w;
+    // w.show();
 
     //加载样式表
     QFile file(":/qss/psblack.css");

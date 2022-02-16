@@ -9,6 +9,8 @@
 - 基于cmake构建，各个部分独立编译
 - src-qt-ui是qt工程
 - test-3rd下可以生成各种库的测试代码
+- linux配置环境变量:Qt5_DIR    CMAKE_PREFIX_PATH
+- linux path新增配置：qt的安装目录
 
 ## 脚本引擎
 基于quickjs

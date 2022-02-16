@@ -91,7 +91,7 @@ if(WIN32)
     add_executable(${CMAKE_PROJECT_NAME} WIN32 ${LiteSolar_SOURCES} ${LiteSolar_HEADERS} ${LiteSolar_FORMS} ${LiteSolar_RESOURCES})
 else()
     # 这是Windows的特性，对于其它平台得去掉WIN32
-    add_executable(${CMAKE_PROJECT_NAME} ${SOURCES})
+    add_executable(${CMAKE_PROJECT_NAME} ${LiteSolar_SOURCES} ${LiteSolar_HEADERS} ${LiteSolar_FORMS} ${LiteSolar_RESOURCES})
 endif()
 
 # 链接设置
