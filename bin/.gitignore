@@ -3,3 +3,6 @@
 *.exe
 *.so
 *.dll
+
+translations
+./QtLiteSolar

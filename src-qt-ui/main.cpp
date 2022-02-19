@@ -10,19 +10,20 @@
 #include "main/modern/uidemo08.h"
 #include "main/modern/appinit.h"
 
-
+#define APP 2
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
 
-
-    // MainWindow w;
-    // w.show();
-
+#if APP == 1
+    MainWindow w;
+    w.show();
+#else
     //加载样式表
-    QFile file(":/qss/psblack.css");
-    if (file.open(QFile::ReadOnly)) {
+    QFile file(":/qss/flatwhite.css");
+    if (file.open(QFile::ReadOnly))
+    {
         QString qss = QLatin1String(file.readAll());
         QString paletteColor = qss.mid(20, 7);
         qApp->setPalette(QPalette(QColor(paletteColor)));
@@ -33,6 +34,6 @@ int main(int argc, char *argv[])
     AppInit::Instance()->start();
     UIDemo08 w;
     w.show();
-
+#endif
     return a.exec();
 }
