@@ -36,6 +36,9 @@ set(LiteSolar_SOURCES
     menu/dialogdevicedata.cpp
     menu/dialogabout.cpp
 
+    js/qtjsruntime.cpp
+    js/jstestwindow.cpp
+
     util/iconhelper.cpp
     )
 # 头文件
@@ -59,6 +62,9 @@ set(LiteSolar_HEADERS
     menu/dialogdevicedata.h
     menu/dialogabout.h
 
+    js/qtjsruntime.h
+    js/jstestwindow.h
+
     util/iconhelper.h
     )
 # UI文件配置
@@ -75,6 +81,8 @@ set(LiteSolar_FORMS
     menu/dialogdeviceevents.ui
     menu/dialogdevicedata.ui
     menu/dialogabout.ui
+
+    js/jstestwindow.ui
     )
 # RC文件配置
 set(LiteSolar_RESOURCES 
@@ -83,8 +91,6 @@ set(LiteSolar_RESOURCES
     main.qrc
     qss.qrc
     )
-
-    include_directories("${CMAKE_SOURCE_DIR}/lib/")
 
 if(WIN32) 
     # 这里如果不加WIN32，会导致编译的可执行文件运行时候会同时弹出一个命令行终端
@@ -98,5 +104,10 @@ endif()
 target_link_libraries(${CMAKE_PROJECT_NAME} PRIVATE 
     Qt5::Core
     Qt5::Gui
-    Qt5::Widgets    
+    Qt5::Widgets 
+    
+    modbus
+    quickjs 
+    JsRuntime
+    JsModbus
 )

@@ -1,6 +1,6 @@
 
 
-#include "QtJsRuntime.h"
+#include "qtjsruntime.h"
 
 #include <QDebug>
 #include <QtConcurrent/QtConcurrent>

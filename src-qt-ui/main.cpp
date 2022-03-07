@@ -10,17 +10,14 @@
 #include "main/modern/uidemo08.h"
 #include "main/modern/appinit.h"
 
-#define APP 2
+#include "js/jstestwindow.h"
+
+#define APP 3
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-
-#if APP == 1
-    MainWindow w;
-    w.show();
-#else
-    //加载样式表
+    //加载样式表 lightblue  flatwhite
     QFile file(":/qss/flatwhite.css");
     if (file.open(QFile::ReadOnly))
     {
@@ -30,9 +27,16 @@ int main(int argc, char *argv[])
         qApp->setStyleSheet(qss);
         file.close();
     }
-    a.setFont(QFont("Microsoft Yahei", 9));
+     a.setFont(QFont("Microsoft Yahei", 9));
+#if APP == 1
+    MainWindow w;
+    w.show();
+#elif APP == 2   
     AppInit::Instance()->start();
     UIDemo08 w;
+    w.show();
+#else
+    JsTestWindow w;
     w.show();
 #endif
     return a.exec();

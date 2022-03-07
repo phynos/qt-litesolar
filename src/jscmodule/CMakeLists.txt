@@ -7,7 +7,8 @@ target_link_libraries(JsTest
     m)
 
 # 指定生成目标
-add_library(JsModbus SHARED js-modbus-slave.c js-cmodule.h)
+add_library(JsModbus SHARED)
+target_sources(JsModbus PRIVATE js-modbus-slave.c)
 target_include_directories(JsModbus INTERFACE ${CMAKE_CURRENT_SOURCE_DIR})
 target_link_libraries(JsModbus 
     modbus

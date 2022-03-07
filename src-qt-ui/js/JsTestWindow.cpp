@@ -1,5 +1,5 @@
-#include "JsTestWindow.h"
-#include "ui_JsTestWindow.h"
+#include "jstestwindow.h"
+#include "ui_jstestwindow.h"
 
 #include <QDebug>
 #include <QTextCodec>
