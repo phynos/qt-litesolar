@@ -10,20 +10,18 @@
 #include "main/modern/uidemo08.h"
 #include "main/modern/appinit.h"
 
-void start_classic()
-{
-    MainWindow w;
-    w.show();
-}
+#define APP 2
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
 
-    QTextCodec *codec = QTextCodec::codecForName("utf-8");
-    QTextCodec::setCodecForLocale(codec);
+#if APP == 1
+    MainWindow w;
+    w.show();
+#else
     //加载样式表
-    QFile file(":/qss/psblack.css");
+    QFile file(":/qss/flatwhite.css");
     if (file.open(QFile::ReadOnly))
     {
         QString qss = QLatin1String(file.readAll());
@@ -36,6 +34,6 @@ int main(int argc, char *argv[])
     AppInit::Instance()->start();
     UIDemo08 w;
     w.show();
-
+#endif
     return a.exec();
 }
