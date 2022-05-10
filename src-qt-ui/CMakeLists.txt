@@ -94,11 +94,13 @@ set(LiteSolar_RESOURCES
 
 if(WIN32) 
     # 这里如果不加WIN32，会导致编译的可执行文件运行时候会同时弹出一个命令行终端
-    add_executable(${CMAKE_PROJECT_NAME} WIN32 ${LiteSolar_SOURCES} ${LiteSolar_HEADERS} ${LiteSolar_FORMS} ${LiteSolar_RESOURCES})
+    add_executable(${CMAKE_PROJECT_NAME} WIN32)
 else()
     # 这是Windows的特性，对于其它平台得去掉WIN32
-    add_executable(${CMAKE_PROJECT_NAME} ${LiteSolar_SOURCES} ${LiteSolar_HEADERS} ${LiteSolar_FORMS} ${LiteSolar_RESOURCES})
+    add_executable(${CMAKE_PROJECT_NAME})
 endif()
+
+target_sources(${CMAKE_PROJECT_NAME} PRIVATE ${LiteSolar_SOURCES} ${LiteSolar_HEADERS} ${LiteSolar_FORMS} ${LiteSolar_RESOURCES})
 
 # 链接设置
 target_link_libraries(${CMAKE_PROJECT_NAME} PRIVATE 
