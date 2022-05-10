@@ -12,13 +12,13 @@
 
 #include "js/jstestwindow.h"
 
-#define APP 3
+#define APP 2
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    //加载样式表 lightblue  flatwhite
-    QFile file(":/qss/flatwhite.css");
+    //加载样式表 lightblue  flatwhite psblack
+    QFile file(":/qss/psblack.css");
     if (file.open(QFile::ReadOnly))
     {
         QString qss = QLatin1String(file.readAll());
