@@ -1,14 +1,59 @@
 <mxfile host="65bd71144e">
     <diagram id="K9fAwrquRv_8jucAh_aZ" name="Page-1">
-        <mxGraphModel dx="1156" dy="596" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+        <mxGraphModel dx="1547" dy="581" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="1654" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
-                <mxCell id="2" value="操作系统" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="144" y="430" width="540" height="60" as="geometry"/>
+                <mxCell id="18" value="" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;" vertex="1" parent="1">
+                    <mxGeometry x="130" y="150" width="700" height="370" as="geometry"/>
                 </mxCell>
-                <mxCell id="3" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="430" y="340" width="140" height="60" as="geometry"/>
+                <mxCell id="2" value="操作系统" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#eeeeee;strokeColor=#36393d;" parent="1" vertex="1">
+                    <mxGeometry x="144" y="430" width="666" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="3" value="&lt;div&gt;&lt;span&gt;脚本引擎&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=center;verticalAlign=top;fillColor=#ffcc99;strokeColor=#36393d;" parent="1" vertex="1">
+                    <mxGeometry x="640" y="340" width="170" height="67" as="geometry"/>
+                </mxCell>
+                <mxCell id="4" value="南向协议栈" style="rounded=0;whiteSpace=wrap;html=1;horizontal=1;verticalAlign=top;fillColor=#cdeb8b;strokeColor=#36393d;" parent="1" vertex="1">
+                    <mxGeometry x="144" y="347" width="226" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="5" value="北向协议栈" style="rounded=0;whiteSpace=wrap;html=1;horizontal=1;verticalAlign=top;fillColor=#cdeb8b;strokeColor=#36393d;" parent="1" vertex="1">
+                    <mxGeometry x="144" y="250" width="226" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="6" value="对外服务" style="rounded=0;whiteSpace=wrap;html=1;horizontal=1;fillColor=#cdeb8b;strokeColor=#36393d;" parent="1" vertex="1">
+                    <mxGeometry x="144" y="170" width="226" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="7" value="UI层" style="rounded=0;whiteSpace=wrap;html=1;horizontal=1;verticalAlign=top;fillColor=#60a917;fontColor=#ffffff;strokeColor=#2D7600;" parent="1" vertex="1">
+                    <mxGeometry x="390" y="170" width="420" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="8" value="&lt;div&gt;&lt;span&gt;关系数据库&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=center;verticalAlign=top;fillColor=#ffcc99;strokeColor=#36393d;" parent="1" vertex="1">
+                    <mxGeometry x="640" y="250" width="170" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="9" value="通讯管理机" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;fillColor=#ffcc99;strokeColor=#36393d;" parent="1" vertex="1">
+                    <mxGeometry x="390" y="250" width="236" height="157" as="geometry"/>
+                </mxCell>
+                <mxCell id="10" value="Lua" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#cce5ff;strokeColor=#36393d;" vertex="1" parent="1">
+                    <mxGeometry x="640" y="367" width="74" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="11" value="JavaScript" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#cce5ff;strokeColor=#36393d;" vertex="1" parent="1">
+                    <mxGeometry x="736" y="367" width="74" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="12" value="sqlite" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#cce5ff;strokeColor=#36393d;" vertex="1" parent="1">
+                    <mxGeometry x="640" y="280" width="74" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="13" value="postgresql" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#cce5ff;strokeColor=#36393d;" vertex="1" parent="1">
+                    <mxGeometry x="736" y="280" width="74" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="14" value="协议管理器" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#cce5ff;strokeColor=#36393d;" vertex="1" parent="1">
+                    <mxGeometry x="390" y="287" width="90" height="43" as="geometry"/>
+                </mxCell>
+                <mxCell id="15" value="存储管理" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#cce5ff;strokeColor=#36393d;" vertex="1" parent="1">
+                    <mxGeometry x="500" y="287" width="90" height="43" as="geometry"/>
+                </mxCell>
+                <mxCell id="16" value="告警管理" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#cce5ff;strokeColor=#36393d;" vertex="1" parent="1">
+                    <mxGeometry x="390" y="352" width="90" height="43" as="geometry"/>
+                </mxCell>
+                <mxCell id="17" value="设备管理" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#cce5ff;strokeColor=#36393d;" vertex="1" parent="1">
+                    <mxGeometry x="500" y="352" width="90" height="43" as="geometry"/>
                 </mxCell>
             </root>
         </mxGraphModel>
