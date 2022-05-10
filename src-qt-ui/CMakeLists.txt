@@ -100,13 +100,7 @@ else()
     add_executable(${CMAKE_PROJECT_NAME})
 endif()
 
-<<<<<<< HEAD
 target_sources(${CMAKE_PROJECT_NAME} PRIVATE ${LiteSolar_SOURCES} ${LiteSolar_HEADERS} ${LiteSolar_FORMS} ${LiteSolar_RESOURCES})
-=======
-target_sources(${CMAKE_PROJECT_NAME} PRIVATE
-    ${LiteSolar_SOURCES} ${LiteSolar_HEADERS} ${LiteSolar_FORMS} ${LiteSolar_RESOURCES}
-)
->>>>>>> 25077be406cc5ac1d206f56b79f3bdfe70398c76
 
 # 链接设置
 target_link_libraries(${CMAKE_PROJECT_NAME} PRIVATE 
