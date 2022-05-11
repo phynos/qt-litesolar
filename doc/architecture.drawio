@@ -4,56 +4,92 @@
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
-                <mxCell id="18" value="" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;" vertex="1" parent="1">
+                <mxCell id="18" value="" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;" parent="1" vertex="1">
                     <mxGeometry x="130" y="150" width="700" height="370" as="geometry"/>
                 </mxCell>
                 <mxCell id="2" value="操作系统" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#eeeeee;strokeColor=#36393d;" parent="1" vertex="1">
                     <mxGeometry x="144" y="430" width="666" height="60" as="geometry"/>
                 </mxCell>
-                <mxCell id="3" value="&lt;div&gt;&lt;span&gt;脚本引擎&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=center;verticalAlign=top;fillColor=#ffcc99;strokeColor=#36393d;" parent="1" vertex="1">
+                <mxCell id="3" value="&lt;div&gt;&lt;span&gt;脚本引擎&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=center;verticalAlign=top;fillColor=#FFFFFF;strokeColor=#79A9BA;" parent="1" vertex="1">
                     <mxGeometry x="640" y="340" width="170" height="67" as="geometry"/>
                 </mxCell>
-                <mxCell id="4" value="南向协议栈" style="rounded=0;whiteSpace=wrap;html=1;horizontal=1;verticalAlign=top;fillColor=#cdeb8b;strokeColor=#36393d;" parent="1" vertex="1">
-                    <mxGeometry x="144" y="347" width="226" height="60" as="geometry"/>
+                <mxCell id="4" value="南向协议栈" style="rounded=0;whiteSpace=wrap;html=1;horizontal=1;verticalAlign=top;" parent="1" vertex="1">
+                    <mxGeometry x="144" y="340" width="226" height="67" as="geometry"/>
                 </mxCell>
-                <mxCell id="5" value="北向协议栈" style="rounded=0;whiteSpace=wrap;html=1;horizontal=1;verticalAlign=top;fillColor=#cdeb8b;strokeColor=#36393d;" parent="1" vertex="1">
+                <mxCell id="5" value="北向协议栈（网关）" style="rounded=0;whiteSpace=wrap;html=1;horizontal=1;verticalAlign=top;" parent="1" vertex="1">
                     <mxGeometry x="144" y="250" width="226" height="60" as="geometry"/>
                 </mxCell>
-                <mxCell id="6" value="对外服务" style="rounded=0;whiteSpace=wrap;html=1;horizontal=1;fillColor=#cdeb8b;strokeColor=#36393d;" parent="1" vertex="1">
+                <mxCell id="6" value="对外服务" style="rounded=0;whiteSpace=wrap;html=1;horizontal=1;verticalAlign=top;" parent="1" vertex="1">
                     <mxGeometry x="144" y="170" width="226" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="7" value="UI层" style="rounded=0;whiteSpace=wrap;html=1;horizontal=1;verticalAlign=top;fillColor=#60a917;fontColor=#ffffff;strokeColor=#2D7600;" parent="1" vertex="1">
                     <mxGeometry x="390" y="170" width="420" height="60" as="geometry"/>
                 </mxCell>
-                <mxCell id="8" value="&lt;div&gt;&lt;span&gt;关系数据库&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=center;verticalAlign=top;fillColor=#ffcc99;strokeColor=#36393d;" parent="1" vertex="1">
+                <mxCell id="8" value="&lt;div&gt;&lt;span&gt;关系数据库&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=center;verticalAlign=top;fillColor=#FFFFFF;strokeColor=#36393d;" parent="1" vertex="1">
                     <mxGeometry x="640" y="250" width="170" height="70" as="geometry"/>
                 </mxCell>
-                <mxCell id="9" value="通讯管理机" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;fillColor=#ffcc99;strokeColor=#36393d;" parent="1" vertex="1">
+                <mxCell id="9" value="通讯管理机" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;strokeColor=#79a9ba;strokeWidth=1;perimeterSpacing=1;" parent="1" vertex="1">
                     <mxGeometry x="390" y="250" width="236" height="157" as="geometry"/>
                 </mxCell>
-                <mxCell id="10" value="Lua" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#cce5ff;strokeColor=#36393d;" vertex="1" parent="1">
+                <mxCell id="10" value="Lua" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#38A1E3;strokeColor=#36393d;fontColor=#FFFFFF;" parent="1" vertex="1">
                     <mxGeometry x="640" y="367" width="74" height="40" as="geometry"/>
                 </mxCell>
-                <mxCell id="11" value="JavaScript" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#cce5ff;strokeColor=#36393d;" vertex="1" parent="1">
+                <mxCell id="11" value="JavaScript" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#cce5ff;strokeColor=#36393d;" parent="1" vertex="1">
                     <mxGeometry x="736" y="367" width="74" height="40" as="geometry"/>
                 </mxCell>
-                <mxCell id="12" value="sqlite" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#cce5ff;strokeColor=#36393d;" vertex="1" parent="1">
+                <mxCell id="12" value="sqlite" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#cce5ff;strokeColor=#36393d;" parent="1" vertex="1">
                     <mxGeometry x="640" y="280" width="74" height="40" as="geometry"/>
                 </mxCell>
-                <mxCell id="13" value="postgresql" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#cce5ff;strokeColor=#36393d;" vertex="1" parent="1">
+                <mxCell id="13" value="postgresql" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#cce5ff;strokeColor=#36393d;" parent="1" vertex="1">
                     <mxGeometry x="736" y="280" width="74" height="40" as="geometry"/>
                 </mxCell>
-                <mxCell id="14" value="协议管理器" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#cce5ff;strokeColor=#36393d;" vertex="1" parent="1">
+                <mxCell id="14" value="协议管理器" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#38a1e3;strokeColor=#006EAF;fontColor=#ffffff;" parent="1" vertex="1">
                     <mxGeometry x="390" y="287" width="90" height="43" as="geometry"/>
                 </mxCell>
-                <mxCell id="15" value="存储管理" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#cce5ff;strokeColor=#36393d;" vertex="1" parent="1">
+                <mxCell id="15" value="存储管理" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#38a1e3;strokeColor=#006EAF;fontColor=#ffffff;" parent="1" vertex="1">
                     <mxGeometry x="500" y="287" width="90" height="43" as="geometry"/>
                 </mxCell>
-                <mxCell id="16" value="告警管理" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#cce5ff;strokeColor=#36393d;" vertex="1" parent="1">
+                <mxCell id="16" value="告警管理" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#38a1e3;strokeColor=#006EAF;fontColor=#ffffff;" parent="1" vertex="1">
                     <mxGeometry x="390" y="352" width="90" height="43" as="geometry"/>
                 </mxCell>
-                <mxCell id="17" value="设备管理" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#cce5ff;strokeColor=#36393d;" vertex="1" parent="1">
+                <mxCell id="17" value="设备管理" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#38a1e3;strokeColor=#006EAF;fontColor=#ffffff;" parent="1" vertex="1">
                     <mxGeometry x="500" y="352" width="90" height="43" as="geometry"/>
+                </mxCell>
+                <mxCell id="19" value="libmodbus" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#38A1E3;strokeColor=#36393d;" parent="1" vertex="1">
+                    <mxGeometry x="144" y="280" width="90" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="20" value="freemodbus" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#38A1E3;strokeColor=#36393d;" parent="1" vertex="1">
+                    <mxGeometry x="143" y="377" width="91" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="21" value="mqtt" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#38A1E3;strokeColor=#36393d;" parent="1" vertex="1">
+                    <mxGeometry x="144" y="200" width="90" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="22" value="http" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#38A1E3;strokeColor=#36393d;" parent="1" vertex="1">
+                    <mxGeometry x="234" y="200" width="90" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="23" value="mqtt" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#38A1E3;strokeColor=#36393d;" parent="1" vertex="1">
+                    <mxGeometry x="234" y="377" width="90" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="24" value="mqtt" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#38A1E3;strokeColor=#36393d;" parent="1" vertex="1">
+                    <mxGeometry x="234" y="280" width="90" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="25" value="sqlite" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#38A1E3;strokeColor=#36393d;" parent="1" vertex="1">
+                    <mxGeometry x="640" y="280" width="74" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="26" value="postgresql" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#38A1E3;strokeColor=#36393d;" parent="1" vertex="1">
+                    <mxGeometry x="736" y="280" width="74" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="27" value="JavaScript" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#38A1E3;strokeColor=#36393d;fontColor=#FFFFFF;" parent="1" vertex="1">
+                    <mxGeometry x="736" y="367" width="74" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="28" value="sqlite" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#38A1E3;strokeColor=#36393d;fontColor=#FFFFFF;" parent="1" vertex="1">
+                    <mxGeometry x="640" y="280" width="74" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="29" value="postgresql" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#38A1E3;strokeColor=#36393d;fontColor=#FFFFFF;" parent="1" vertex="1">
+                    <mxGeometry x="736" y="280" width="74" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="30" value="&lt;div&gt;&lt;span&gt;关系数据库&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=center;verticalAlign=top;fillColor=#FFFFFF;strokeColor=#79A9BA;" parent="1" vertex="1">
+                    <mxGeometry x="640" y="250" width="170" height="70" as="geometry"/>
                 </mxCell>
             </root>
         </mxGraphModel>
