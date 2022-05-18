@@ -10,6 +10,11 @@ set(LUA_SRC_LIB src/lauxlib.c src/lbaselib.c src/ldblib.c src/liolib.c src/lcoro
 add_library(liblua ${LUA_SRC_CORE} ${LUA_SRC_LIB})
 set_target_properties(liblua PROPERTIES OUTPUT_NAME lua)
 target_include_directories(liblua PUBLIC ${CMAKE_CURRENT_BINARY_DIR}/src)
+IF (UNIX)
+        target_compile_definitions(liblua PRIVATE 
+                LUA_USE_LINUX)
+        target_link_libraries(liblua PUBLIC dl m)
+ENDIF()
 
 add_library(libluadll SHARED)
 set_target_properties(libluadll PROPERTIES OUTPUT_NAME lua54)
@@ -28,7 +33,7 @@ ELSEIF (UNIX)
 ENDIF()
 
 add_executable(lua)
-target_link_libraries(lua libluadll)
+target_link_libraries(lua liblua)
 target_sources(lua PRIVATE src/lua.c)
 target_include_directories(lua PRIVATE ${CMAKE_CURRENT_BINARY_DIR}/src)
 
