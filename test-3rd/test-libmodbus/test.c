@@ -23,15 +23,13 @@ int main(void)
 
     //3-建立连接
     if (modbus_connect(mb) == -1) {
-        fprintf(stderr, "Connection failed: %s\n", modbus_strerror(errno));
+        //fprintf(stderr, "Connection failed: %s\n", modbus_strerror(errno));
+        fprintf(stderr, "Connection failed\n");
         modbus_free(mb);
         return -1;
     }
 
     //4-设置应答延时
-    struct timeval t;
-    t.tv_sec=0;
-    t.tv_usec=1000000;//1000ms
     modbus_set_response_timeout(mb,0,1000000);
 
     //5-循环读
@@ -53,8 +51,7 @@ int main(void)
             printf("<%#x>",tab_reg[i]);
         }
         printf("\n");
-        printf("-------------------------------------------\n");
-        Sleep(1);
+        printf("-------------------------------------------\n");    
     }
 
     //7-关闭modbus端口

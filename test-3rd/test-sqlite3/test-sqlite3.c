@@ -7,7 +7,7 @@
 */
 
 #include <stdio.h>
-#include <sqlite3.h>    // sqlite3 API库
+#include "sqlite3.h"    // sqlite3 API库
 
 // sqlite3_exec()中使用的回调函数
 static int callback_selectAll(void *, int, char **, char **);
