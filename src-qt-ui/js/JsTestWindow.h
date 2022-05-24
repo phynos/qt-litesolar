@@ -5,7 +5,7 @@
 #include <QFileSystemModel>
 #include <qtreewidget.h>
 
-#include "qtjsruntime.h"
+#include "QtJsRuntime.h"
 
 namespace Ui {
 class JsTestWindow;

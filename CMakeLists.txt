@@ -18,9 +18,5 @@ add_subdirectory(lib)
 add_subdirectory(test-3rd)
 add_subdirectory(src)
 
-if(WIN32) 
 add_subdirectory(src-qt-ui)
-else()
-
-endif()
 
