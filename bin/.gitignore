@@ -4,5 +4,8 @@
 *.so
 *.dll
 
+lua
+luac
+
 translations
 ./QtLiteSolar
