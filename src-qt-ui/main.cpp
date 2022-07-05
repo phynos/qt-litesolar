@@ -10,7 +10,7 @@
 #include "main/modern/uidemo08.h"
 #include "main/modern/appinit.h"
 
-#include "js/jstestwindow.h"
+#include "js/JsTestWindow.h"
 
 #define APP 2
 

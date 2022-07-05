@@ -36,8 +36,8 @@ set(LiteSolar_SOURCES
     menu/dialogdevicedata.cpp
     menu/dialogabout.cpp
 
-    js/qtjsruntime.cpp
-    js/jstestwindow.cpp
+    js/QtJsRuntime.cpp
+    js/JsTestWindow.cpp
 
     util/iconhelper.cpp
     )
@@ -62,8 +62,8 @@ set(LiteSolar_HEADERS
     menu/dialogdevicedata.h
     menu/dialogabout.h
 
-    js/qtjsruntime.h
-    js/jstestwindow.h
+    js/QtJsRuntime.h
+    js/JsTestWindow.h
 
     util/iconhelper.h
     )
@@ -82,7 +82,7 @@ set(LiteSolar_FORMS
     menu/dialogdevicedata.ui
     menu/dialogabout.ui
 
-    js/jstestwindow.ui
+    js/JsTestWindow.ui
     )
 # RC文件配置
 set(LiteSolar_RESOURCES 
