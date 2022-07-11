@@ -43,8 +43,8 @@ else()
     dl
     )
     target_include_directories(freemodbus PRIVATE 
-    demo/LINUXTCP/port
-    modbus/include
-    modbus/tcp    
+    ${CMAKE_CURRENT_SOURCE_DIR}/demo/LINUXTCP/port
+    ${CMAKE_CURRENT_SOURCE_DIR}/modbus/include
+    ${CMAKE_CURRENT_SOURCE_DIR}/modbus/tcp    
     )
 endif()

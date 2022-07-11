@@ -6,6 +6,7 @@
 
 lua
 luac
+freemodbus
 
 translations
 ./QtLiteSolar
